@@ -1,10 +1,12 @@
 .rules {
+  background: var(--color-dark);
+  color: var(--color-light);
   display: grid;
   position: relative;
 }
 
 .rules__anchor {
-  border-bottom: var(--border-dark);
+  border-bottom: var(--border-light);
 }
 
 .rules__content {
@@ -12,7 +14,7 @@
 }
 
 .rules__content dl {
-  border-bottom: var(--border-dark);
+  border-bottom: var(--border-light);
   padding: var(--space-large);
 }
 
@@ -46,7 +48,7 @@
   }
 
   .rules__content dl dt {
-    border-right: var(--border-dark);
+    border-right: var(--border-light);
     grid-column: span 7;
   }
 
