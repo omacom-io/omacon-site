@@ -1,0 +1,37 @@
+.fineprint {
+  border-bottom: var(--border-dark);
+  display: grid;
+  position: relative;
+}
+
+.fineprint__anchor {
+  border-bottom: var(--border-dark);
+}
+
+.fineprint__content {
+  display: grid;
+  gap: var(--space-x-large);
+  padding: var(--space-x-large) var(--space-large);
+}
+
+
+
+@media(min-width: 48em) {
+
+  .fineprint__content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+
+@media(min-width: 64em) {
+
+  .fineprint__content {
+    gap: var(--space-xxx-large);
+    grid-template-columns: repeat(4, 1fr);
+    padding: var(--space-xx-large) var(--space-xxx-large);
+  }
+
+}

@@ -1,0 +1,84 @@
+.experience {
+  border-bottom: var(--border-dark);
+  display: grid;
+  position: relative;
+}
+
+.experience__anchor {
+  border-bottom: var(--border-dark);
+}
+
+.experience__content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.experience__content dl {
+  border-right: var(--border-dark);
+  border-bottom: var(--border-dark);
+  padding: var(--space-x-large) var(--space-large);
+  position: relative;
+}
+
+.experience__content dl:before {
+  background: url('../images/noise-light.png') center / 80%;
+  content: '';
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+.experience__content dl:nth-child(2n) {
+  border-right: none;
+}
+
+.experience__content dl:nth-child(n+5) {
+  border-bottom: none;
+}
+
+.experience__content dl dt,
+.experience__content dl dd {
+  position: relative;
+  z-index: 1;
+}
+
+
+
+@media(hover: hover) {
+
+  .experience__content dl:before {
+    transition: opacity var(--transition-slow);
+  }
+
+  .experience__content dl:hover:before {
+    opacity: 1;
+  }
+
+}
+
+
+
+@media(min-width: 64em) {
+
+  .experience__content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .experience__content dl {
+    padding: var(--space-xx-large) var(--space-xxx-large);
+  }
+
+  .experience__content dl:nth-child(2n) {
+    border-right: var(--border-dark);
+  }
+
+  .experience__content dl:nth-child(3n) {
+    border-right: none;
+  }
+
+  .experience__content dl:nth-child(n+4) {
+    border-bottom: none;
+  }
+
+}

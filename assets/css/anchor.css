@@ -1,0 +1,45 @@
+.anchor {
+  color: inherit;
+  display: grid;
+  font-weight: inherit;
+  padding: var(--space-neutral) var(--space-large);
+  text-decoration: none;
+}
+
+.anchor h3 {
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-medium);
+  font-weight: 500;
+  line-height: var(--line-height-tight);
+  margin-bottom: -0.3em;
+  margin-top: -0.225em;
+}
+
+
+
+@media(hover: hover) {
+
+  .anchor {
+    transition:
+      background var(--transition),
+      color var(--transition)
+    ;
+  }
+
+  .anchor:focus,
+  .anchor:hover {
+    background: var(--color-pink);
+    color: var(--color-dark);
+  }
+
+}
+
+
+
+@media(min-width: 64em) {
+
+  .anchor {
+    padding-inline: var(--space-xxx-large);
+  }
+
+}

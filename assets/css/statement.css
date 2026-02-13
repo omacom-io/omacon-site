@@ -1,0 +1,27 @@
+.statement {
+  border-bottom: var(--border-dark);
+  display: grid;
+  position: relative;
+}
+
+.statement__content {
+  display: grid;
+  padding: 9em var(--space-large);
+  text-align: center;
+}
+
+.statement__content p {
+  font-size: var(--font-size-medium);
+}
+
+
+
+@media(min-width: 64em) {
+
+  .statement__content {
+    margin-inline: auto;
+    padding: 12em var(--space-xxx-large);
+    width: min(100%, 52em);
+  }
+
+}

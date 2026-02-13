@@ -1,0 +1,52 @@
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--font-size) * 4.2125);
+}
+
+body {
+  background: var(--color-light);
+  color: var(--color-dark);
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: var(--letter-spacing);
+  line-height: var(--line-height);
+  min-height: 100vh;
+  min-height: 100dvh;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: var(--color-pink);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: from-font;
+}
+
+b,
+strong {
+  font-weight: 700;
+}
+
+u {
+  text-decoration: underline;
+  text-decoration-color: var(--color-pink);
+  text-decoration-thickness: 0.09em;
+  text-underline-offset: 0.0825em;
+}
+
+img,
+source,
+video {
+  height: auto;
+  max-width: 100%;
+  width: 100%;
+}

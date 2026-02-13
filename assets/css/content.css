@@ -1,0 +1,46 @@
+.content h2 {
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-large);
+  font-weight: 400;
+  line-height: var(--line-height-tight);
+  margin-bottom: -0.275em;
+  margin-top: -0.225em;
+}
+
+.content p {
+  margin-block: -0.3875em;
+}
+
+.content dl {
+  align-content: start;
+  display: grid;
+  gap: 1.3em;
+}
+
+.content dl dt,
+.content dl dd {
+  margin-block: -0.3875em;
+}
+
+.content dl dt {
+  font-weight: 700;
+}
+
+.content ul {
+  align-content: start;
+  display: grid;
+  gap: 0.5em;
+  margin-block: -0.3875em;
+}
+
+.content ul li {
+  padding-left: 1.1em;
+  position: relative;
+}
+
+.content ul li:before {
+  color: var(--color-pink);
+  content: '◆';
+  left: 0;
+  position: absolute;
+}

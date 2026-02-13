@@ -1,0 +1,36 @@
+:root {
+
+  --rgb-dark: 13, 8, 38;
+  --rgb-light: 248, 245, 242;
+  --rgb-pink: 255, 165, 255;
+
+  --color-dark: rgb(var(--rgb-dark));
+  --color-light: rgb(var(--rgb-light));
+  --color-pink: rgb(var(--rgb-pink));
+
+  --font-family-sans: 'Clash Grotesk', sans-serif;
+  --font-family-mono: 'Jet Brains Mono', monospace;
+  --font-size: max(0.75rem, 1.1875vw);
+  --font-size-medium: 135%;
+  --font-size-large: 225%;
+
+  --letter-spacing: normal;
+  --letter-spacing-loose: 0.025em;
+
+  --line-height: 1.5;
+  --line-height-tight: 1.2;
+
+  --border-dark: max(1px, 0.08em) solid var(--color-dark);
+  --border-light: max(1px, 0.08em) solid var(--color-light);
+
+  --space-neutral: 1.5em;
+  --space-medium: 1em;
+  --space-large: 2em;
+  --space-x-large: 3em;
+  --space-xx-large: 4em;
+  --space-xxx-large: 5em;
+
+  --transition: 0.15s cubic-bezier(0.37, 1, 0.74, 1);
+  --transition-slow: 0.3s cubic-bezier(0.37, 1, 0.74, 1);
+
+}

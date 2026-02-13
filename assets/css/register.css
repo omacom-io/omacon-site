@@ -1,0 +1,28 @@
+.register {
+  background: var(--color-dark);
+  color: var(--color-light);
+  display: grid;
+  position: relative;
+}
+
+.register__anchor {
+  border-bottom: var(--border-light);
+}
+
+.register__content {
+  display: grid;
+  gap: var(--space-large);
+  padding: var(--space-x-large) var(--space-large);
+}
+
+
+
+@media(min-width: 64em) {
+
+  .register__content {
+    gap: var(--space-x-large);
+    padding: var(--space-xx-large) var(--space-xxx-large);
+    width: min(100%, 50em);
+  }
+
+}

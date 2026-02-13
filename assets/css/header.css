@@ -1,0 +1,6 @@
+.header {
+  background: var(--color-dark);
+  display: grid;
+  height: 50vw;
+  width: 100%;
+}
