@@ -1,1694 +1,286 @@
-<!DOCTYPE html>
+<!doctype html>
+
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OMACON</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    @font-face {
-      font-family: 'JetBrains Mono';
-      src: url('fonts/JetBrainsMono-Regular.ttf') format('truetype');
-      font-weight: 400;
-      font-style: normal;
-    }
 
-    @font-face {
-      font-family: 'JetBrains Mono';
-      src: url('fonts/JetBrainsMono-Medium.ttf') format('truetype');
-      font-weight: 500;
-      font-style: normal;
-    }
-
-    @font-face {
-      font-family: 'JetBrains Mono';
-      src: url('fonts/JetBrainsMono-Bold.ttf') format('truetype');
-      font-weight: 700;
-      font-style: normal;
-    }
-
-    @font-face {
-      font-family: 'Clash Grotesk';
-      src: url('fonts/ClashGrotesk-Variable.ttf') format('truetype');
-      font-weight: 200 700;
-      font-style: normal;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html, body {
-      min-height: 100vh;
-      background: #0D0826;
-      overflow-x: hidden;
-    }
-
-    html.no-scroll,
-    html.no-scroll body {
-      overflow: hidden;
-    }
-
-    .container {
-      position: relative;
-      width: 100vw;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-    }
-
-    /* About Section */
-    .about-section {
-      background-color: #F8F5F2;
-      padding: 0;
-    }
-
-    .about-content {
-      max-width: 100%;
-    }
-
-    .about-top {
-      padding: 80px 80px 60px 80px;
-      border-bottom: 1px solid #1a1a1a;
-    }
-
-    .about-headline {
-      font-family: 'Clash Grotesk', sans-serif;
-      font-size: 2.8rem;
-      font-weight: 400;
-      line-height: 1.15;
-      color: #1a1a1a;
-      margin-bottom: 32px;
-    }
-
-    .about-description {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.95rem;
-      font-weight: 400;
-      line-height: 1.7;
-      color: #1a1a1a;
-      max-width: 575px;
-      margin-bottom: 0;
-    }
-
-    .experience-title {
-      font-family: 'Clash Grotesk', sans-serif;
-      font-size: 1.5rem;
-      font-weight: 500;
-      color: #1a1a1a;
-      letter-spacing: 0.02em;
-      padding: 24px 80px;
-      border-bottom: 1px solid #1a1a1a;
-      margin: 0;
-    }
-
-    .experience-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0;
-    }
-
-    .experience-item {
-      padding: 48px 40px;
-      border-right: 1px solid #1a1a1a;
-      border-bottom: 1px solid #1a1a1a;
-    }
-
-    .experience-item:nth-child(3n+1) {
-      padding-left: 80px;
-    }
-
-    .experience-item:nth-child(3n) {
-      border-right: none;
-      padding-right: 80px;
-    }
-
-    .experience-item h3 {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 1rem;
-      font-weight: 700;
-      color: #1a1a1a;
-      margin-bottom: 12px;
-      display: inline-block;
-      width: fit-content;
-    }
-
-    .experience-item h3::after {
-      content: '';
-      display: block;
-      margin-top: 6px;
-      height: 3px;
-      background-image: url("data:image/svg+xml,%3Csvg width='138' height='3' viewBox='0 0 138 3' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='1.5' y1='1.5' x2='136.5' y2='1.49999' stroke='%23FF8AFF' stroke-width='3' stroke-linecap='round' stroke-dasharray='0.01 6'/%3E%3C/svg%3E");
-      background-repeat: repeat-x;
-      background-size: auto 3px;
-    }
-
-    .experience-item p {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.9rem;
-      font-weight: 400;
-      line-height: 1.5;
-      color: #1a1a1a;
-      max-width: 280px;
-    }
-
-
-    @media (max-width: 900px) {
-      .experience-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      
-      .experience-item:nth-child(3n+1) {
-        padding-left: 40px;
-      }
-      
-      .experience-item:nth-child(3n) {
-        border-right: 1px solid #1a1a1a;
-        padding-right: 40px;
-      }
-      
-      .experience-item:nth-child(2n) {
-        border-right: none;
-      }
-      
-      .about-top {
-        padding: 60px 40px 48px;
-      }
-      
-      .experience-title {
-        padding: 24px 40px;
-      }
-      
-      .cta-content {
-        padding: 0 40px;
-      }
-      
-      .cta-item {
-        font-size: 0.95rem;
-      }
-      
-      .cta-bar.sticky .cta-logo {
-        width: 168px;
-      }
-      
-      .cta-bar.sticky .cta-content {
-        padding: 0 40px;
-        gap: 32px;
-      }
-      
-      .cta-bar.sticky .cta-item {
-        font-size: 0.9rem;
-      }
-      
-      .about-headline {
-        font-size: 2rem;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .experience-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .experience-item {
-        border-right: none;
-        padding: 32px 24px;
-      }
-      
-      .experience-item:nth-child(3n+1) {
-        padding-left: 24px;
-      }
-      
-      .experience-item:nth-child(3n) {
-        border-right: none;
-        padding-right: 24px;
-      }
-      
-      .about-top {
-        padding: 48px 24px 40px;
-      }
-      
-      .experience-title {
-        padding: 20px 24px;
-      }
-      
-      .cta-content {
-        padding: 0 24px;
-      }
-      
-      .cta-item {
-        font-size: 0.8rem;
-      }
-      
-      .cta-button {
-        padding: 12px 24px;
-        font-size: 0.85rem;
-      }
-      
-      .cta-bar.sticky .cta-logo {
-        width: 134px;
-      }
-      
-      .cta-bar.sticky .cta-content {
-        padding: 0 16px;
-        gap: 20px;
-      }
-      
-      .cta-bar.sticky .cta-item {
-        font-size: 0.75rem;
-      }
-    }
-
-    /* Manifesto Section */
-    .manifesto-section {
-      background: #F8F5F2;
-      padding: 180px 40px 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .manifesto-text {
-      max-width: 560px;
-      text-align: center;
-      margin-bottom: 180px;
-    }
-
-    .manifesto-text p {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 1rem;
-      font-weight: 400;
-      line-height: 1.8;
-      color: #1a1a1a;
-      letter-spacing: 0.02em;
-    }
-
-    .transition-lines {
-      width: calc(100% + 80px);
-      margin-left: -40px;
-      margin-right: -40px;
-      position: relative;
-      overflow: visible;
-      background: #0D0826;
-    }
-
-    .transition-lines svg.lines-svg {
-      display: block;
-      width: 100%;
-      height: auto;
-      position: relative;
-      z-index: 10;
-      pointer-events: none;
-    }
-
-    @media (max-width: 768px) {
-      .manifesto-section {
-        padding: 60px 24px 0;
-      }
-
-      .manifesto-text p {
-        font-size: 0.9rem;
-      }
-      
-      .transition-lines {
-        width: calc(100% + 48px);
-        margin-left: -24px;
-        margin-right: -24px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .manifesto-text p {
-        font-size: 0.85rem;
-      }
-    }
-
-    /* Vibe Section */
-    .vibe-section {
-      background-color: #F8F5F2;
-      padding: 0;
-      position: relative;
-      z-index: 20;
-    }
-
-    .vibe-content {
-      max-width: 100%;
-    }
-
-    .vibe-title {
-      font-family: 'Clash Grotesk', sans-serif;
-      font-size: 1.5rem;
-      font-weight: 500;
-      color: #1a1a1a;
-      letter-spacing: 0.02em;
-      padding: 24px 80px;
-      border-bottom: 1px solid #1a1a1a;
-      margin: 0;
-    }
-
-    .vibe-header {
-      display: grid;
-      grid-template-columns: 2fr 3fr;
-      gap: 0;
-      border-bottom: 1px solid #1a1a1a;
-    }
-
-    .vibe-left {
-      padding: 48px 40px 48px 80px;
-      border-right: 1px solid #1a1a1a;
-    }
-
-    .vibe-intro {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.95rem;
-      font-weight: 400;
-      line-height: 1.7;
-      color: #1a1a1a;
-      margin-bottom: 32px;
-      max-width: 400px;
-    }
-
-    .vibe-closing {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.9rem;
-      font-weight: 400;
-      line-height: 1.6;
-      color: #1a1a1a;
-      max-width: 400px;
-    }
-
-    .vibe-expect {
-      padding: 48px 80px 48px 40px;
-    }
-
-    .vibe-expect h4 {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: #1a1a1a;
-      margin-bottom: 16px;
-    }
-
-    .vibe-expect ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .vibe-expect li {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.9rem;
-      font-weight: 400;
-      line-height: 1.6;
-      color: #1a1a1a;
-      padding-left: 24px;
-      position: relative;
-      margin-bottom: 8px;
-    }
-
-    .vibe-expect li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 12px;
-      height: 12px;
-      display: inline-block;
-      background-color: #FF8AFF;
-      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-    }
-
-    .vibe-columns {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
-    }
-
-    .vibe-column {
-      padding: 48px 40px 60px 80px;
-      border-right: 1px solid #1a1a1a;
-    }
-
-    .vibe-column:last-child {
-      border-right: none;
-      padding-left: 40px;
-      padding-right: 80px;
-    }
-
-    .vibe-column h3 {
-      font-family: 'Clash Grotesk', sans-serif;
-      font-size: 2rem;
-      font-weight: 400;
-      color: #1a1a1a;
-      margin-bottom: 32px;
-    }
-
-    .rule-item {
-      margin-bottom: 20px;
-    }
-
-    .rule-item p {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.9rem;
-      font-weight: 400;
-      line-height: 1.6;
-      color: #1a1a1a;
-    }
-
-    .rule-item strong {
-      font-weight: 700;
-    }
-
-    /* Speakers Section */
-    .speakers-section {
-      background: #0D0826;
-      padding: 0;
-    }
-
-    .speakers-title {
-      font-family: 'Clash Grotesk', sans-serif;
-      font-size: 1.5rem;
-      font-weight: 500;
-      color: #ffffff;
-      letter-spacing: 0.02em;
-      text-transform: capitalize;
-      padding: 24px 80px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-      margin: 0;
-    }
-
-    .speakers-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-    }
-
-    .speaker-card {
-      padding: 40px 40px 40px 80px;
-      border-right: 1px solid rgba(255, 255, 255, 0.3);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    }
-
-    .speaker-card:nth-child(4n) {
-      border-right: none;
-    }
-
-    .speaker-card {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .speaker-card .noise-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      pointer-events: none;
-    }
-
-    .speaker-card:hover {
-      cursor: default;
-    }
-
-    .speaker-card:hover .noise-overlay {
-      opacity: 0.6;
-    }
-
-    .speaker-card:hover .speaker-name,
-    .speaker-card:hover .speaker-bio {
-      color: #ffffff;
-      position: relative;
-      z-index: 1;
-    }
-
-    .speaker-card .speaker-image,
-    .speaker-card .speaker-name,
-    .speaker-card .speaker-bio {
-      position: relative;
-      z-index: 1;
-    }
-
-    .speaker-card:nth-last-child(-n+4) {
-      border-bottom: none;
-    }
-
-    .speaker-image {
-      width: 180px;
-      height: 180px;
-      background: #d9d9d9;
-      margin-bottom: 20px;
-    }
-
-    .speaker-name {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 18px;
-      font-weight: 700;
-      color: #ffffff;
-      margin-bottom: 8px;
-    }
-
-    .speaker-bio {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.85rem;
-      font-weight: 400;
-      line-height: 1.5;
-      color: rgba(255, 255, 255, 0.7);
-    }
-
-    @media (max-width: 1024px) {
-      .speakers-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      
-      .speaker-card {
-        padding: 32px 32px 32px 40px;
-      }
-      
-      .speaker-card:nth-child(2n) {
-        border-right: none;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .speakers-title {
-        padding: 20px 24px;
-      }
-      
-      .speakers-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .speaker-card {
-        border-right: none;
-        padding: 32px 24px;
-      }
-    }
-
-    /* House Rules Section */
-    .house-rules-section {
-      background: #0D0826;
-      padding: 0;
-      position: relative;
-      z-index: 20;
-    }
-
-    /* Fine Print Section */
-    .fine-print-section {
-      background: #F8F5F2;
-      padding: 0;
-    }
-
-    .fine-print-title {
-      font-family: 'Clash Grotesk', sans-serif;
-      font-size: 1.5rem;
-      font-weight: 500;
-      color: #1a1a1a;
-      letter-spacing: 0.02em;
-      text-transform: capitalize;
-      padding: 24px 80px;
-      border-bottom: 1px solid #1a1a1a;
-      margin: 0;
-    }
-
-    .fine-print-content {
-      padding: 48px 80px;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 40px;
-    }
-
-    .fine-print-item {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .fine-print-item h3 {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: #1a1a1a;
-      margin: 0 0 4px 0;
-      display: inline-block;
-      width: fit-content;
-    }
-
-    .fine-print-item h3::after {
-      content: '';
-      display: block;
-      margin-top: 6px;
-      height: 3px;
-      background-image: url("data:image/svg+xml,%3Csvg width='138' height='3' viewBox='0 0 138 3' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='1.5' y1='1.5' x2='136.5' y2='1.49999' stroke='%23FF8AFF' stroke-width='3' stroke-linecap='round' stroke-dasharray='0.01 6'/%3E%3C/svg%3E");
-      background-repeat: repeat-x;
-      background-size: auto 3px;
-    }
-
-    .fine-print-item p {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.9rem;
-      font-weight: 400;
-      line-height: 1.6;
-      color: #1a1a1a;
-      margin: 16px 0 0 0;
-    }
-
-    @media (max-width: 900px) {
-      .fine-print-content {
-        grid-template-columns: repeat(2, 1fr);
-        padding: 40px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .fine-print-title {
-        padding: 24px 40px;
-      }
-
-      .fine-print-content {
-        padding: 40px;
-        gap: 32px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .fine-print-title {
-        padding: 20px 24px;
-      }
-
-      .fine-print-content {
-        grid-template-columns: 1fr;
-        padding: 32px 24px;
-      }
-    }
-
-    /* Register Section */
-    .register-section {
-      background: #0D0826;
-      padding: 0;
-      overflow: hidden;
-    }
-
-    .register-title {
-      font-family: 'Clash Grotesk', sans-serif;
-      font-size: 1.5rem;
-      font-weight: 500;
-      color: #ffffff;
-      letter-spacing: 0.02em;
-      text-transform: capitalize;
-      padding: 24px 80px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-      margin: 0;
-    }
-
-    .register-content {
-      padding: 48px 80px 80px;
-    }
-
-    .register-headline {
-      font-family: 'Clash Grotesk', sans-serif;
-      font-size: 40px;
-      font-weight: 400;
-      color: #ffffff;
-      line-height: 1.2;
-      margin: 0 0 24px 0;
-      max-width: 600px;
-    }
-
-    .register-subtext {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 18px;
-      font-weight: 400;
-      color: #ffffff;
-      margin: 0 0 32px 0;
-    }
-
-    .register-button {
-      display: inline-block;
-      background: #ffffff;
-      color: #0D0826;
-      font-family: 'Clash Grotesk', sans-serif;
-      font-size: 1rem;
-      font-weight: 500;
-      text-transform: uppercase;
-      padding: 14px 36px;
-      text-decoration: none;
-      letter-spacing: 0.05em;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .register-button:hover {
-      background: #FF8AFF;
-      color: #0D0826;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    }
-
-    @media (max-width: 768px) {
-      .register-title {
-        padding: 24px 40px;
-      }
-
-      .register-content {
-        padding: 40px 40px 60px;
-      }
-
-      .register-headline {
-        font-size: 2rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .register-title {
-        padding: 20px 24px;
-      }
-
-      .register-content {
-        padding: 32px 24px 48px;
-      }
-
-      .register-headline {
-        font-size: 1.5rem;
-      }
-    }
-
-    .house-rules-title {
-      font-family: 'Clash Grotesk', sans-serif;
-      font-size: 1.5rem;
-      font-weight: 500;
-      color: #ffffff;
-      letter-spacing: 0.02em;
-      padding: 24px 80px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-      margin: 0;
-    }
-
-    .house-rules-grid {
-      display: flex;
-      flex-direction: column;
-      --fan-offset: 80px;
-      overflow: hidden;
-    }
-
-    .house-rule-row {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-      transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
-      transform-origin: top center;
-    }
-
-    .house-rule-row:last-child {
-      border-bottom: none;
-    }
-
-    .house-rule-row[data-fan-index="1"] {
-      transform: translateY(calc(var(--fan-offset, 0) * -1));
-    }
-    .house-rule-row[data-fan-index="2"] {
-      transform: translateY(calc(var(--fan-offset, 0) * -2));
-    }
-    .house-rule-row[data-fan-index="3"] {
-      transform: translateY(calc(var(--fan-offset, 0) * -3));
-    }
-
-    .house-rule-label {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 1rem;
-      font-weight: 700;
-      color: #ffffff;
-      padding: 32px 40px 32px 80px;
-      border-right: 1px solid rgba(255, 255, 255, 0.3);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .house-rule-label::before {
-      content: '';
-      width: 8px;
-      height: 8px;
-      background-color: #FF8AFF;
-      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-      flex-shrink: 0;
-    }
-
-    .house-rule-desc {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 1rem;
-      font-weight: 400;
-      color: #ffffff;
-      padding: 32px 80px 32px 40px;
-      line-height: 1.5;
-    }
-
-    /* Fade in on scroll animations */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
-
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .fade-in-delay-1 { transition-delay: 0.1s; }
-    .fade-in-delay-2 { transition-delay: 0.2s; }
-    .fade-in-delay-3 { transition-delay: 0.3s; }
-    .fade-in-delay-4 { transition-delay: 0.4s; }
-    .fade-in-delay-5 { transition-delay: 0.5s; }
-    .fade-in-delay-6 { transition-delay: 0.6s; }
-
-    @media (max-width: 900px) {
-      .vibe-title {
-        padding: 24px 40px;
-      }
-
-      .vibe-header {
-        grid-template-columns: 1fr;
-      }
-
-      .vibe-left {
-        padding: 40px;
-        border-right: none;
-        border-bottom: 1px solid #1a1a1a;
-      }
-
-      .vibe-expect {
-        padding: 40px;
-      }
-
-      .vibe-columns {
-        grid-template-columns: 1fr;
-      }
-
-      .vibe-column {
-        padding: 40px;
-        border-right: none;
-        border-bottom: 1px solid #1a1a1a;
-      }
-
-      .vibe-column:last-child {
-        padding-left: 40px;
-        padding-right: 40px;
-        border-bottom: none;
-      }
-
-      .house-rules-title {
-        padding: 24px 40px;
-      }
-
-      .house-rule-label {
-        padding: 24px 24px 24px 40px;
-      }
-
-      .house-rule-desc {
-        padding: 24px 40px 24px 24px;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .vibe-title {
-        padding: 20px 24px;
-      }
-
-      .vibe-left {
-        padding: 32px 24px;
-      }
-
-      .vibe-expect {
-        padding: 32px 24px;
-      }
-
-      .vibe-column {
-        padding: 32px 24px;
-      }
-
-      .vibe-column:last-child {
-        padding-left: 24px;
-        padding-right: 24px;
-      }
-
-      .vibe-column h3 {
-        font-size: 1.6rem;
-      }
-
-      .house-rules-title {
-        padding: 20px 24px;
-      }
-
-      .house-rule-row {
-        grid-template-columns: 1fr;
-      }
-
-      .house-rule-label {
-        padding: 24px 24px 12px 24px;
-        border-right: none;
-        border-bottom: none;
-      }
-
-      .house-rule-desc {
-        padding: 0 24px 24px 24px;
-      }
-    }
-
-    .shapes-wrapper {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .shapes-svg {
-      width: 100%;
-      height: 100%;
-      filter: drop-shadow(0 0 20px rgba(232, 121, 249, 0.6)) drop-shadow(0 0 40px rgba(232, 121, 249, 0.4));
-    }
-
-    /* Logo text SVG - centered between logo and CTA bar */
-    .logo-text-svg {
-      position: absolute;
-      bottom: calc(70px + 12vh);
-      left: 50%;
-      transform: translateX(-50%) translateY(20px);
-      width: 450px;
-      height: 75px;
-      opacity: 0;
-      transition: all 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
-      transition-delay: 0.1s;
-      z-index: 10;
-      filter: drop-shadow(0 0 10px rgba(255,255,255,0.4));
-    }
-
-    .stage-3 .logo-text-svg {
-      opacity: 1;
-      transform: translateX(-50%) translateY(0);
-    }
-
-    /* Static glow on final logo (no animation) */
-    .stage-3 .shapes-svg {
-      filter: drop-shadow(0 0 20px rgba(232, 121, 249, 0.6)) drop-shadow(0 0 40px rgba(232, 121, 249, 0.4));
-    }
-
-    /* Initial shapes (for animation) - instant switch, no fade */
-    .initial-shapes {
-      transition: none;
-    }
-
-    /* Final logo path (from Figma) */
-    .final-logo {
-      opacity: 0;
-      transition: none;
-    }
-
-    .stage-3 .initial-shapes {
-      opacity: 0;
-    }
-
-    .stage-3 .final-logo {
-      opacity: 1;
-    }
-
-    /* CTA Bar */
-    .cta-bar {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background-color: #FF8AFF;
-      padding: 20px 0;
-      z-index: 100;
-      opacity: 0;
-      transform: translateY(100%);
-      transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
-      transition-delay: 0.15s;
-    }
-
-    .stage-3 .cta-bar {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .cta-bar.sticky {
-      position: fixed;
-      top: 0;
-      bottom: auto;
-      transform: translateY(0);
-    }
-
-    .cta-logo {
-      display: none;
-      width: 202px;
-      height: auto;
-      flex-shrink: 0;
-    }
-
-    .cta-bar.sticky .cta-logo {
-      display: block;
-    }
-
-    .cta-bar.sticky .cta-content {
-      padding: 0 80px;
-      gap: 48px;
-      justify-content: flex-start;
-    }
-
-    .cta-bar.sticky .cta-item {
-      font-size: 1rem;
-    }
-
-    .cta-bar.sticky .cta-button {
-      margin-left: auto;
-    }
-
-    .cta-content {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 80px;
-      white-space: nowrap;
-      gap: 40px;
-      transition: all 0.3s ease;
-    }
-
-    .cta-item {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 1.1rem;
-      font-weight: 400;
-      color: #1a1025;
-      letter-spacing: 0.05em;
-      transition: font-size 0.3s ease;
-    }
-
-    .cta-button {
-      font-family: 'Clash Grotesk', sans-serif;
-      font-size: 1rem;
-      font-weight: 500;
-      color: #ffffff;
-      background-color: #1a1025;
-      border: none;
-      padding: 14px 36px;
-      border-radius: 8px;
-      cursor: pointer;
-      letter-spacing: 0.05em;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .cta-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    }
-  </style>
-</head>
-<body>
-  <!-- SVG Filter for pink noise effect -->
-  <svg width="0" height="0" style="position: absolute;">
-    <defs>
-      <filter id="pinkNoiseFilter" x="0" y="0" width="100%" height="100%" filterUnits="objectBoundingBox" color-interpolation-filters="sRGB">
-        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-        <feTurbulence type="fractalNoise" baseFrequency="1.4285714626312256 1.4285714626312256" stitchTiles="stitch" numOctaves="3" result="noise" seed="115" />
-        <feColorMatrix in="noise" type="luminanceToAlpha" result="alphaNoise" />
-        <feComponentTransfer in="alphaNoise" result="coloredNoise1">
-          <feFuncA type="discrete" tableValues="0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 "/>
-        </feComponentTransfer>
-        <feComposite operator="in" in2="shape" in="coloredNoise1" result="noise1Clipped" />
-        <feFlood flood-color="#F987FA" result="color1Flood" />
-        <feComposite operator="in" in2="noise1Clipped" in="color1Flood" result="color1" />
-        <feMerge result="effect1_noise">
-          <feMergeNode in="shape" />
-          <feMergeNode in="color1" />
-        </feMerge>
-      </filter>
-    </defs>
-  </svg>
-
-  <div class="container" id="container">
-    <div class="shapes-wrapper">
-      <svg class="shapes-svg" id="shapesSvg" viewBox="0 0 1103 553" preserveAspectRatio="xMidYMid meet">
-        <defs>
-          <linearGradient id="shapeGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" style="stop-color:#F59FEB"/>
-            <stop offset="50%" style="stop-color:#E879F9"/>
-            <stop offset="100%" style="stop-color:#DB5AE8"/>
-          </linearGradient>
-          <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur stdDeviation="42" result="blur"/>
-            <feMerge>
-              <feMergeNode in="blur"/>
-              <feMergeNode in="SourceGraphic"/>
-            </feMerge>
-          </filter>
-        </defs>
-        
-        <!-- Initial animated shapes with dynamic masks -->
-        <g id="initialShapes" class="initial-shapes">
-          <!-- Masks will be updated dynamically -->
-          <defs id="dynamicDefs"></defs>
-          <circle id="animCircle" fill="#E879F9"/>
-          <rect id="animRect" fill="#E879F9"/>
-          <polygon id="animDiamond" fill="#E879F9"/>
-        </g>
-        
-        <!-- Final logo path from Figma (with correct cutouts) - scaled 0.667, moved up -->
-        <g class="final-logo" transform="translate(551.5, 200) scale(0.667) translate(-551.5, -276)">
-          <path d="M826.947 84.2978L1018.73 276.082L826.947 467.866L718.64 359.559L718.64 192.605L826.947 84.2978ZM385.344 433.287C435.054 398.654 467.586 341.074 467.586 275.895C467.586 210.717 435.054 153.137 385.344 118.504L385.344 84.2041L718.64 84.2041L718.64 192.605L635.163 276.082L718.64 359.559L718.64 467.587L385.344 467.587L385.344 433.287ZM84.2041 275.896C84.2042 170.028 170.027 84.2043 275.895 84.2041C316.584 84.2041 354.311 96.8835 385.344 118.504L385.344 433.287C354.311 454.907 316.584 467.587 275.895 467.587C170.027 467.587 84.2042 381.763 84.2041 275.896Z" fill="#E879F9"/>
-        </g>
-      </svg>
-    </div>
-    <!-- CTA Bar -->
-    <div class="cta-bar" id="ctaBar">
-      <div class="cta-content">
-        <svg class="cta-logo" viewBox="0 0 235 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M15.7707 0C6.78195 0 0 6.66134 0 15.5C0 24.3387 6.78195 31 15.7707 31C24.7595 31 31.5415 24.3387 31.5415 15.5C31.5415 6.66134 24.7595 0 15.7707 0ZM28.721 15.5C28.721 22.9159 23.1555 28.5101 15.7707 28.5101C8.38594 28.5101 2.80967 22.9159 2.80967 15.5C2.80967 8.08414 8.38594 2.48992 15.7707 2.48992C23.1555 2.48992 28.721 8.08414 28.721 15.5Z" fill="#1E1E1E"/>
-          <path d="M15.7707 3.82654C9.24714 3.82654 4.14453 8.95728 4.14453 15.5C4.14453 22.0428 9.25791 27.1735 15.7707 27.1735C22.2836 27.1735 27.3969 22.0428 27.3969 15.5C27.3969 8.95728 22.2943 3.82654 15.7707 3.82654ZM24.5011 15.5108C24.5011 20.6739 20.7442 24.5758 15.7707 24.5758C10.7973 24.5758 7.02955 20.7601 7.02955 15.5108C7.02955 10.2615 10.7004 6.40269 15.7707 6.40269C20.841 6.40269 24.5011 10.2292 24.5011 15.5108Z" fill="#1E1E1E"/>
-          <path d="M122.603 28.5101C115.218 28.5101 109.642 22.9159 109.642 15.5C109.642 8.08414 115.207 2.48992 122.603 2.48992C128.911 2.48992 133.884 6.5751 135.198 12.3957H138.072C136.683 5.1523 130.504 0 122.603 0C113.614 0 106.832 6.66134 106.832 15.5C106.832 24.3387 113.614 31 122.603 31C130.504 31 136.694 25.8477 138.072 18.6043H135.198C133.884 24.4249 128.911 28.5101 122.603 28.5101Z" fill="#1E1E1E"/>
-          <path d="M122.614 24.5651C117.554 24.5651 113.872 20.7493 113.872 15.5C113.872 10.2507 117.543 6.39191 122.614 6.39191C126.607 6.39191 129.697 8.79559 130.849 12.3957H133.831C132.507 7.40512 128.061 3.82654 122.614 3.82654C116.09 3.82654 110.987 8.95728 110.987 15.5C110.987 22.0428 116.101 27.1735 122.614 27.1735C128.061 27.1735 132.507 23.595 133.831 18.6044H130.859C129.686 22.1506 126.543 24.5651 122.624 24.5651H122.614Z" fill="#1E1E1E"/>
-          <path d="M155.296 0C146.307 0 139.525 6.66134 139.525 15.5C139.525 24.3387 146.307 31 155.296 31C164.285 31 171.067 24.3387 171.067 15.5C171.067 6.66134 164.285 0 155.296 0ZM168.246 15.5C168.246 22.9159 162.681 28.5101 155.296 28.5101C147.911 28.5101 142.335 22.9159 142.335 15.5C142.335 8.08414 147.901 2.48992 155.296 2.48992C162.692 2.48992 168.246 8.08414 168.246 15.5Z" fill="#1E1E1E"/>
-          <path d="M155.296 3.82654C148.773 3.82654 143.67 8.95728 143.67 15.5C143.67 22.0428 148.783 27.1735 155.296 27.1735C161.809 27.1735 166.922 22.0428 166.922 15.5C166.922 8.95728 161.82 3.82654 155.296 3.82654ZM164.027 15.5108C164.027 20.6739 160.27 24.5758 155.296 24.5758C150.323 24.5758 146.555 20.7601 146.555 15.5108C146.555 10.2615 150.226 6.40269 155.296 6.40269C160.366 6.40269 164.027 10.2292 164.027 15.5108Z" fill="#1E1E1E"/>
-          <path d="M89.7694 0C81.2543 0 74.6338 6.39186 74.6338 14.7563V30.4503H81.6633V22.3338H97.8754V30.4503H104.905V14.7563C104.905 6.39186 98.2845 0 89.7694 0ZM102.009 28.4454H100.685V19.8654H78.8537V28.4454H77.5296L77.4973 14.7347C77.5188 7.71766 82.7829 2.43602 89.7694 2.43602C96.7559 2.43602 102.031 7.71766 102.041 14.7347L102.009 28.4454Z" fill="#1E1E1E"/>
-          <path d="M89.7694 3.69714C83.6118 3.69714 78.7891 8.52607 78.7568 14.7024V18.6905H100.804V14.7024C100.771 8.52607 95.9485 3.70792 89.791 3.69714H89.7694ZM98.0477 14.7563V16.1683H81.4804V14.7563C81.4804 9.75486 84.9575 6.13317 89.7587 6.12239C94.5491 6.12239 98.037 9.75486 98.037 14.7563H98.0477Z" fill="#1E1E1E"/>
-          <path d="M200.831 30.4719H193.802V9.72256C193.802 8.0734 193.436 7.75003 191.918 7.75003H180.539V30.4719H173.51V1.28271H193.436C198.054 1.28271 200.821 3.57861 200.821 8.43988V30.4719H200.831ZM198.022 28.467V8.36443C198.022 5.15233 196.256 3.90198 193.005 3.90198H176.406V28.467H177.773V5.14155H192.564C195.61 5.14155 196.698 6.02541 196.698 8.64468V28.467H198.022Z" fill="#1E1E1E"/>
-          <path d="M64.6335 1.26111H40.8106C36.1924 1.26111 33.4258 3.55701 33.4258 8.41827V30.4503H40.4553V9.70096C40.4553 8.05179 40.8213 7.72842 42.3392 7.72842H49.2073V30.4503H56.2368V7.7392H63.1049C64.6335 7.7392 64.9888 8.06257 64.9888 9.71173V30.461H72.0183V8.41827C72.0183 3.55701 69.2517 1.26111 64.6335 1.26111ZM69.2194 28.4454H67.8953V8.62307C67.8953 6.00381 66.8081 5.11994 63.7616 5.11994H53.5994V28.4454H52.0169V5.11994H41.801C38.7545 5.11994 37.6672 6.00381 37.6672 8.62307V28.4454H36.2462V8.34282C36.2462 5.13072 38.0117 3.88037 41.2627 3.88037H64.2029C67.454 3.88037 69.2194 5.13072 69.2194 8.34282V28.4454Z" fill="#1E1E1E"/>
-        </svg>
-        <span class="cta-item">April 10, 2026</span>
-        <span class="cta-item">Shopify Space NY</span>
-        <span class="cta-item">130 attendees</span>
-        <span class="cta-item">$299</span>
-        <button class="cta-button">REGISTER</button>
+  <head>
+
+    <title>Omacon 2026 — The vibes around Linux are changing</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <meta name="description" content="The vibes around Linux are changing">
+
+    <meta property="og:site_name" content="Omacon">
+    <meta property="og:title" content="Omacon">
+    <meta property="og:description" content="The vibes around Linux are changing">
+    <meta property="og:image" content="https://omacon.org/assets/images/opengraph.png">
+    <meta property="og:url" content="https://omacon.org">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:title" content="Omacon">
+    <meta name="twitter:description" content="The vibes around Linux are changing">
+    <meta name="twitter:image" content="https://omacon.org/assets/images/opengraph.png">
+    <meta name="twitter:image:alt" content="Omacon">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="assets/images/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/root.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/elements.css">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/anchor.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/button.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/content.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/experience.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/fineprint.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/footer.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/header.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/nav.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/overview.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/register.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/rules.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/speakers.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/statement.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/vibe.css">
+
+    <script type="module" src="assets/js/script.js"></script>
+
+  </head>
+
+  <body>
+
+    <header class="header"></header>
+
+    <nav class="nav">
+      <h1 class="nav__logo">
+        <svg aria-hidden="true" height="31" width="235" viewBox="0 0 235 31" xmlns="http://www.w3.org/2000/svg"><g fill="currentColor"><path clip-rule="evenodd" d="m15.7705 3.82617c6.5236 0 11.626 5.13106 11.626 11.67383 0 6.5428-5.1132 11.6738-11.626 11.6738-6.51271-.0001-11.62596-5.1311-11.62597-11.6738 0-6.54269 5.10249-11.67371 11.62597-11.67383zm0 2.57617c-5.0702.00012-8.74119 3.85916-8.7412 9.10836 0 5.2493 3.7679 9.0654 8.7412 9.0655 4.9734 0 8.7305-3.9024 8.7305-9.0655 0-5.2816-3.6602-9.10836-8.7305-9.10836z" fill-rule="evenodd"/><path clip-rule="evenodd" d="m15.7705 0c8.9888 0 15.7705 6.66133 15.7705 15.5 0 8.8387-6.7817 15.5-15.7705 15.5-8.98866-.0001-15.7705-6.6614-15.7705-15.5.0000003-8.83859 6.78184-15.49989076 15.7705-15.5zm0 2.49023c-7.38467.00012-12.96093 5.59399-12.96093 13.00977 0 7.4158 5.57626 13.0097 12.96093 13.0098 7.3848 0 12.9502-5.5939 12.9502-13.0098 0-7.41586-5.5654-13.00977-12.9502-13.00977z" fill-rule="evenodd"/><path d="m122.603 0c7.901 0 14.081 5.15217 15.469 12.3955h-2.875c-1.313-5.82044-6.286-9.90527-12.594-9.90527-7.396.00006-12.961 5.59395-12.961 13.00977 0 7.4158 5.576 13.0097 12.961 13.0098 6.308 0 11.281-4.0849 12.594-9.9053h2.875c-1.378 7.2433-7.568 12.3955-15.469 12.3955-8.989 0-15.771-6.6614-15.771-15.5 0-8.83863 6.782-15.49995005 15.771-15.5z"/><path clip-rule="evenodd" d="m155.296 3.82617c6.523.00002 11.626 5.13107 11.626 11.67383 0 6.5427-5.113 11.6738-11.626 11.6738s-11.626-5.131-11.626-11.6738c0-6.54277 5.102-11.67383 11.626-11.67383zm0 2.57617c-5.07 0-8.741 3.85906-8.741 9.10836s3.767 9.0655 8.741 9.0655c4.973 0 8.73-3.9024 8.73-9.0655 0-5.2816-3.66-9.10834-8.73-9.10836z" fill-rule="evenodd"/><path clip-rule="evenodd" d="m155.296 0c8.989.00001528 15.77 6.66135 15.77 15.5 0 8.8387-6.781 15.5-15.77 15.5s-15.771-6.6613-15.771-15.5c0-8.83867 6.782-15.5 15.771-15.5zm0 2.49023c-7.396 0-12.961 5.59391-12.961 13.00977 0 7.4159 5.576 13.0098 12.961 13.0098s12.95-5.594 12.95-13.0098c0-7.41584-5.555-13.00975-12.95-13.00977z" fill-rule="evenodd"/><path d="m228.56 21.9023c.378.0002.68.3024.68.6807h.011v1.0166c0 .3782-.302.6815-.681.6816h-4.672c-.378-.0001-.681-.3034-.681-.6816v-1.6973z"/><path d="m228.56 6.72852c.378.00014.68.30321.68.68164v4.67184c0 .3782-.302.6815-.68.6817h-4.672c-.379-.0001-.682-.3034-.682-.6817v-4.67184c0-.37846.303-.68154.682-.68164z"/><g clip-rule="evenodd" fill-rule="evenodd"><path d="m234.999 30.1055h-29.199v-29.200227h29.199zm-24.067-11.8594h5.98c.378.0001.681.3033.681.6816v1.0166c0 .3783-.303.6816-.681.6817h-4.672c-1.081.0001-1.958.8757-1.958 1.957v1.0166c0 1.0812.877 1.9579 1.958 1.958h5.981v-1.2764h-5.981c-.378-.0001-.681-.3034-.681-.6816v-1.0166c0-.3783.303-.6806.681-.6807h4.672c1.081-.0001 1.957-.8768 1.957-1.958v-1.0166c0-1.0813-.876-1.9569-1.957-1.957h-5.98zm12.956-1.2754c-1.082.0001-1.958.8757-1.958 1.957v4.6719c0 1.0812.876 1.9579 1.958 1.958h4.672c1.081-.0001 1.956-.8768 1.957-1.958h-.011v-1.0166c0-1.0812-.876-1.9568-1.957-1.957h-5.343v-1.6983c0-.3783.303-.6815.682-.6816h5.98v-1.2754zm-12.956-10.24218h5.98c.379.00012.681.30319.681.68164v1.0166c-.001.3782-.303.68152-.681.68164h-4.672c-1.081.00011-1.958.87567-1.958 1.957v1.0166c0 1.0812.877 1.9579 1.958 1.958h5.981v-1.2763h-5.981c-.378-.0001-.681-.3034-.681-.6817v-1.0166c0-.3784.303-.6815.681-.6816h4.672c1.081-.0001 1.957-.87588 1.957-1.95704v-1.0166c0-1.08141-.876-1.95691-1.957-1.95704h-5.98zm12.956-1.2754c-1.082.00011-1.958.87562-1.958 1.95704v4.67184c0 1.0812.876 1.9579 1.958 1.958h4.672c1.081-.0001 1.956-.8768 1.957-1.958v-4.67184c0-1.08139-.876-1.95689-1.957-1.95704z"/><path d="m64.6328.900391c4.6182 0 7.3848 2.295959 7.3848 7.157229v22.04198h-7.0293v-20.74901c0-1.64911-.3552-1.97266-1.8838-1.97266h-6.8682v22.71097h-7.0293v-22.72171h-6.8681c-1.5179 0-1.8838.32351-1.8838 1.97265v20.74906h-7.0293v-22.03128c0-4.86127 2.7666-7.157229 7.3847-7.157229zm-23.3701 2.619139c-3.2509 0-5.0165 1.25003-5.0166 4.46192v20.10255h1.4209v-19.82228c.0001-2.61906 1.0874-3.50293 4.1338-3.50293h10.2158v23.32521h1.582v-23.32521h10.1621c3.0464 0 4.1338.88387 4.1338 3.50293v19.82228h1.3243v-20.10255c-.0002-3.21189-1.7657-4.46192-5.0167-4.46192z"/><path d="m89.791 3.69727c6.1575.0108 10.98 4.82871 11.013 11.00483v3.9883h-22.0472v-3.9883c.0324-6.17614 4.8552-11.00483 11.0127-11.00483zm-.0322 2.4248c-4.8011.01078-8.2781 3.6326-8.2783 8.63383v1.4121h16.5674v-1.4121h-.0108c-.0002-5.00118-3.4881-8.63377-8.2783-8.63383z"/><path d="m89.7695 0c8.5149.00013745 15.1355 6.39175 15.1355 14.7559v15.3437h-7.03v-7.7656h-16.2119v7.7656h-7.0293v-15.3437c.0002-8.36424 6.6207-14.7559 15.1357-14.7559zm0 2.43555c-6.9863 0-12.2507 5.28195-12.2724 12.29885l.0322 13.3457h1.3242v-8.2149h21.8315v8.2149h1.324l.032-13.3457c-.011-7.01681-5.2852-12.29871-12.2715-12.29885z"/><path d="m193.443.900391c4.62 0 7.388 2.296259 7.388 7.159179v22.04003h-7.021v-20.75683c0-1.64962-.367-1.97265-1.885-1.97265h-11.383v22.72948h-7.031v-29.199209zm-17.036 27.194309h1.367v-23.33493h14.797c3.048 0 4.136.88465 4.136 3.50488v19.83005h1.324v-20.11032c0-3.2133-1.766-4.46387-5.018-4.46387h-16.606z"/></g><path d="m122.613 3.82617c5.447 0 9.893 3.57886 11.217 8.56933h-2.981c-1.152-3.60005-4.242-6.0039-8.236-6.0039-5.07.00006-8.741 3.8591-8.741 9.1084s3.682 9.0654 8.741 9.0654h.011c3.918 0 7.062-2.4148 8.235-5.9609h2.971c-1.324 4.9905-5.77 8.5693-11.217 8.5693-6.512 0-11.626-5.1311-11.626-11.6738 0-6.54273 5.103-11.67377 11.626-11.67383z"/></g></svg>
+      </h1>
+      <div class="nav__details">
+        <p>April 10, 2026</p>
+        <p>Shopify Space NY</p>
+        <p>130 Attendees</p>
+        <p>$299</p>
+        <a href="/" class="button button--nav">
+          <span>Register</span>
+        </a>
+      </div>
+    </nav>
+
+    <div class="overview" id="overview">
+      <div class="overview__content content">
+        <h2>The vibes around Linux are changing. Come take part of the shift.</h2>
+        <p>For one day, we’re gathering the builders who refuse to accept “that’s just how Linux works and looks”. The ones reimagining what a developer OS could be. The minds behind Omarchy — the Linux distribution that’s earning droves of converts from Windows and Mac users. Who believe The Year of Linux on the Desktop is a prophesy, not (just!) a joke.</p>
       </div>
     </div>
-    <svg class="logo-text-svg" viewBox="0 0 649 86" preserveAspectRatio="xMidYMid meet">
-      <g clip-path="url(#clip0_665_1101)">
-        <path d="M43.5541 0C18.7297 0 0 18.4798 0 43C0 67.5202 18.7297 86 43.5541 86C68.3784 86 87.1081 67.5202 87.1081 43C87.1081 18.4798 68.3784 0 43.5541 0ZM79.3189 43C79.3189 63.573 63.9487 79.0925 43.5541 79.0925C23.1595 79.0925 7.75946 63.573 7.75946 43C7.75946 22.427 23.1595 6.90751 43.5541 6.90751C63.9487 6.90751 79.3189 22.427 79.3189 43Z" fill="white"/>
-        <path d="M43.5539 10.6154C25.5377 10.6154 11.4458 24.8491 11.4458 43C11.4458 61.1509 25.5674 75.3845 43.5539 75.3845C61.5404 75.3845 75.662 61.1509 75.662 43C75.662 24.8491 61.5701 10.6154 43.5539 10.6154ZM67.6647 43.0299C67.6647 57.3532 57.289 68.178 43.5539 68.178C29.8188 68.178 19.4134 57.5925 19.4134 43.0299C19.4134 28.4673 29.5512 17.7621 43.5539 17.7621C57.5566 17.7621 67.6647 28.3776 67.6647 43.0299Z" fill="white"/>
-        <path d="M338.592 79.0925C318.198 79.0925 302.798 63.573 302.798 43C302.798 22.427 318.168 6.90751 338.592 6.90751C356.014 6.90751 369.749 18.2406 373.376 34.388H381.314C377.479 14.2935 360.414 0 338.592 0C313.768 0 295.038 18.4798 295.038 43C295.038 67.5202 313.768 86 338.592 86C360.414 86 377.508 71.7065 381.314 51.612H373.376C369.749 67.7594 356.014 79.0925 338.592 79.0925Z" fill="white"/>
-        <path d="M338.622 68.1481C324.649 68.1481 314.481 57.5625 314.481 43C314.481 28.4374 324.619 17.7322 338.622 17.7322C349.652 17.7322 358.184 24.4005 361.365 34.388H369.6C365.943 20.5431 353.665 10.6154 338.622 10.6154C320.606 10.6154 306.514 24.8491 306.514 43C306.514 61.1509 320.635 75.3845 338.622 75.3845C353.665 75.3845 365.943 65.4568 369.6 51.6119H361.395C358.154 61.4499 349.473 68.1481 338.652 68.1481H338.622Z" fill="white"/>
-        <path d="M428.881 0C404.057 0 385.327 18.4798 385.327 43C385.327 67.5202 404.057 86 428.881 86C453.706 86 472.435 67.5202 472.435 43C472.435 18.4798 453.706 0 428.881 0ZM464.646 43C464.646 63.573 449.276 79.0925 428.881 79.0925C408.487 79.0925 393.087 63.573 393.087 43C393.087 22.427 408.457 6.90751 428.881 6.90751C449.306 6.90751 464.646 22.427 464.646 43Z" fill="white"/>
-        <path d="M428.881 10.6154C410.864 10.6154 396.772 24.8491 396.772 43C396.772 61.1509 410.894 75.3845 428.881 75.3845C446.867 75.3845 460.989 61.1509 460.989 43C460.989 24.8491 446.897 10.6154 428.881 10.6154ZM452.991 43.0299C452.991 57.3532 442.616 68.178 428.881 68.178C415.145 68.178 404.74 57.5925 404.74 43.0299C404.74 28.4673 414.878 17.7621 428.881 17.7621C442.883 17.7621 452.991 28.3776 452.991 43.0299Z" fill="white"/>
-        <path d="M247.916 0C224.4 0 206.116 17.7323 206.116 40.9367V84.475H225.53V61.9583H270.303V84.475H289.716V40.9367C289.716 17.7323 271.432 0 247.916 0ZM281.719 78.9131H278.062V55.1106H217.77V78.9131H214.113L214.024 40.8769C214.084 21.4103 228.622 6.758 247.916 6.758C267.211 6.758 281.778 21.4103 281.808 40.8769L281.719 78.9131Z" fill="white"/>
-        <path d="M247.916 10.2566C230.911 10.2566 217.592 23.653 217.503 40.7872V51.8512H278.389V40.7872C278.3 23.653 264.981 10.2865 247.976 10.2566H247.916ZM270.779 40.9367V44.8539H225.025V40.9367C225.025 27.0619 234.627 17.0146 247.887 16.9847C261.116 16.9847 270.749 27.0619 270.749 40.9367H270.779Z" fill="white"/>
-        <path d="M554.638 84.5348H535.224V26.9722C535.224 22.3971 534.213 21.5 530.021 21.5H498.597V84.5348H479.184V3.55843H534.213C546.967 3.55843 554.608 9.92769 554.608 23.4138V84.5348H554.638ZM546.878 78.9729V23.2045C546.878 14.2935 542.003 10.8248 533.024 10.8248H487.181V78.9729H490.957V14.2636H531.805C540.219 14.2636 543.221 16.7156 543.221 23.9819V78.9729H546.878Z" fill="white"/>
-        <path d="M178.497 3.49866H112.705C99.9511 3.49866 92.3105 9.86792 92.3105 23.354V84.475H111.724V26.9124C111.724 22.3373 112.735 21.4402 116.927 21.4402H135.894V84.475H155.308V21.4701H174.275C178.497 21.4701 179.478 22.3672 179.478 26.9423V84.5049H198.892V23.354C198.892 9.86792 191.251 3.49866 178.497 3.49866ZM191.162 78.9131H187.505V23.9222C187.505 16.6558 184.502 14.2038 176.089 14.2038H148.024V78.9131H143.654V14.2038H115.44C107.027 14.2038 104.024 16.6558 104.024 23.9222V78.9131H100.1V23.1447C100.1 14.2337 104.975 10.765 113.954 10.765H177.308C186.286 10.765 191.162 14.2337 191.162 23.1447V78.9131Z" fill="white"/>
-        <path d="M649 3.79761H568.729V84.5347H649V3.79761Z" fill="white"/>
-        <path d="M581.067 66.5632V63.7524C581.067 60.7621 583.475 58.34 586.448 58.34H599.292C600.332 58.34 601.165 57.5027 601.165 56.4561V53.6453C601.165 52.5987 600.332 51.7614 599.292 51.7614H582.851V48.2329H599.292C602.265 48.2329 604.673 50.655 604.673 53.6453V56.4561C604.673 59.4464 602.265 61.8685 599.292 61.8685H586.448C585.408 61.8685 584.576 62.7058 584.576 63.7524V66.5632C584.576 67.6098 585.408 68.4471 586.448 68.4471H602.889V71.9756H586.448C583.475 71.9756 581.067 69.5535 581.067 66.5632ZM633.184 63.7524C633.184 62.7058 632.351 61.8685 631.311 61.8685H616.624V66.5632C616.624 67.6098 617.457 68.4471 618.497 68.4471H631.34C632.381 68.4471 633.213 67.6098 633.213 66.5632V63.7524H633.184ZM581.067 34.7169V31.9061C581.067 28.9158 583.475 26.4937 586.448 26.4937H599.292C600.332 26.4937 601.165 25.6564 601.165 24.6098V21.799C601.165 20.7524 600.332 19.9151 599.292 19.9151H582.851V16.3866H599.292C602.265 16.3866 604.673 18.8087 604.673 21.799V24.6098C604.673 27.6001 602.265 30.0222 599.292 30.0222H586.448C585.408 30.0222 584.576 30.8595 584.576 31.9061V34.7169C584.576 35.7635 585.408 36.6008 586.448 36.6008H602.889V40.1293H586.448C583.475 40.1293 581.067 37.7072 581.067 34.7169ZM633.184 21.799C633.184 20.7524 632.351 19.9151 631.311 19.9151H618.467C617.427 19.9151 616.594 20.7524 616.594 21.799V34.7169C616.594 35.7635 617.427 36.6008 618.467 36.6008H631.311C632.351 36.6008 633.184 35.7635 633.184 34.7169V21.799ZM636.692 66.5632C636.692 69.5535 634.284 71.9756 631.311 71.9756H618.467C615.494 71.9756 613.086 69.5535 613.086 66.5632V53.6453C613.086 50.655 615.494 48.2329 618.467 48.2329H634.908V51.7614H618.467C617.427 51.7614 616.594 52.5987 616.594 53.6453V58.34H631.281C634.254 58.34 636.662 60.7621 636.662 63.7524V66.5632H636.692ZM636.692 34.7169C636.692 37.7072 634.284 40.1293 631.311 40.1293H618.467C615.494 40.1293 613.086 37.7072 613.086 34.7169V21.799C613.086 18.8087 615.494 16.3866 618.467 16.3866H631.311C634.284 16.3866 636.692 18.8087 636.692 21.799V34.7169Z" fill="#0D0826"/>
-      </g>
-      <defs>
-        <clipPath id="clip0_665_1101">
-          <rect width="649" height="86" fill="white"/>
-        </clipPath>
-      </defs>
-    </svg>
-  </div>
 
-  <!-- About Section -->
-  <section class="about-section">
-    <div class="about-content">
-      <div class="about-top fade-in">
-        <h2 class="about-headline">The vibes around Linux are changing.<br>Come take part of the shift.</h2>
-        <p class="about-description">For one day, we're gathering the builders who refuse to accept "that's just how Linux works and looks." The ones reimagining what a developer OS could be. The minds behind Omarchy—the Linux distribution that's earning droves of converts from Windows and Mac users. Who believe The Year of Linux on the Desktop is a prophesy, not (just!) a joke.</p>
-      </div>
-      
-      <h2 class="experience-title fade-in">Experience</h2>
-      <div class="experience-grid fade-in">
-        <div class="experience-item">
-          <h3>20-minute lightning talks</h3>
-          <p>from architects of modern developer infrastructure</p>
-        </div>
-        <div class="experience-item">
-          <h3>DHH</h3>
-          <p>sharing why he's betting on Omarchy- and why it matters</p>
-        </div>
-        <div class="experience-item">
-          <h3>Primeagen</h3>
-          <p>doing... whatever Primeagen does (you know it's good)</p>
-        </div>
-        <div class="experience-item">
-          <h3>Real talk</h3>
-          <p>about what it takes to build an OS developers actually love</p>
-        </div>
-        <div class="experience-item">
-          <h3>Live demos</h3>
-          <p>of tools you didn't know you needed (until now)</p>
-        </div>
-        <div class="experience-item">
-          <h3>Fresh hardware</h3>
-          <p>running Linux better than ever</p>
-        </div>
+    <div class="experience" id="experience">
+      <a class="experience__anchor anchor" href="#experience">
+        <h3>Experience</h3>
+      </a>
+      <div class="experience__content content">
+        <dl>
+          <dt><u>20-minute lightning talks</u></dt>
+          <dd>from architects of modern developer infrastructure.</dd>
+        </dl>
+        <dl>
+          <dt><u>DHH</u></dt>
+          <dd>sharing why he’s betting on Omarchy — and why it matters.</dd>
+        </dl>
+        <dl>
+          <dt><u>Primeagen</u></dt>
+          <dd>doing... whatever Primeagen does (you know it’s good).</dd>
+        </dl>
+        <dl>
+          <dt><u>Real talk</u></dt>
+          <dd>about what it takes to build an OS developers actually love.</dd>
+        </dl>
+        <dl>
+          <dt><u>Live demos</u></dt>
+          <dd>of tools you didn’t know you needed (until now).</dd>
+        </dl>
+        <dl>
+          <dt><u>Fresh hardware</u></dt>
+          <dd>running Linux better than ever.</dd>
+        </dl>
       </div>
     </div>
-  </section>
 
-  <!-- Vibe Section -->
-  <section class="vibe-section">
-    <div class="vibe-content fade-in">
-      <h2 class="vibe-title">Vibe</h2>
-      <div class="vibe-header">
-        <div class="vibe-left">
-          <p class="vibe-intro">We're not here to teach you Linux basics. We're here because the status quo is boring and someone needs to fix it.</p>
-          <p class="vibe-closing">If you've ever thought "there has to be a better way" while configuring your dev environment, you belong here.</p>
-        </div>
-        <div class="vibe-expect">
-          <h4>Expect:</h4>
+    <div class="vibe" id="vibe">
+      <a class="vibe__anchor anchor" href="#vibe">
+        <h3>Vibe</h3>
+      </a>
+      <div class="vibe__content content">
+        <section>
+          <p>We’re not here to teach you Linux basics. We’re here because the status quo is boring and someone needs to fix it.</p>
+          <p>If you’ve ever thought “there has to be a better way” while configuring your dev environment, you belong here.</p>
+        </section>
+        <section>
+          <p><strong>Expect:</strong></p>
           <ul>
-            <li>Technical depth without the academic pretense</li>
-            <li>Strong opinions, loosely held (and vigorously debated)</li>
-            <li>Coffee strong enough to compile a kernel</li>
-            <li>Conversations that continue long after the last talk</li>
+            <li>Technical depth without the academic pretense.</li>
+            <li>Strong opinions, loosely held (and vigorously debated).</li>
+            <li>Coffee strong enough to compile a kernel.</li>
+            <li>Conversations that continue long after the last talk.</li>
           </ul>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Speakers Section -->
-  <section class="speakers-section fade-in">
-    <h2 class="speakers-title">Speakers</h2>
-    <div class="speakers-grid">
-      <div class="speaker-card">
-        <svg class="noise-overlay" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"><rect width="100%" height="100%" filter="url(#pinkNoiseFilter)" fill="#0D0826"/></svg>
-        <div class="speaker-image"></div>
-        <h3 class="speaker-name">DHH</h3>
-        <p class="speaker-bio">DHH is ...</p>
-      </div>
-      <div class="speaker-card">
-        <svg class="noise-overlay" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"><rect width="100%" height="100%" filter="url(#pinkNoiseFilter)" fill="#0D0826"/></svg>
-        <div class="speaker-image"></div>
-        <h3 class="speaker-name">Primeagen</h3>
-        <p class="speaker-bio"></p>
-      </div>
-      <div class="speaker-card">
-        <svg class="noise-overlay" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"><rect width="100%" height="100%" filter="url(#pinkNoiseFilter)" fill="#0D0826"/></svg>
-        <div class="speaker-image"></div>
-        <h3 class="speaker-name"></h3>
-        <p class="speaker-bio"></p>
-      </div>
-      <div class="speaker-card">
-        <svg class="noise-overlay" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"><rect width="100%" height="100%" filter="url(#pinkNoiseFilter)" fill="#0D0826"/></svg>
-        <div class="speaker-image"></div>
-        <h3 class="speaker-name"></h3>
-        <p class="speaker-bio"></p>
-      </div>
-      <div class="speaker-card">
-        <svg class="noise-overlay" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"><rect width="100%" height="100%" filter="url(#pinkNoiseFilter)" fill="#0D0826"/></svg>
-        <div class="speaker-image"></div>
-        <h3 class="speaker-name">DHH</h3>
-        <p class="speaker-bio">DHH is ...</p>
-      </div>
-      <div class="speaker-card">
-        <svg class="noise-overlay" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"><rect width="100%" height="100%" filter="url(#pinkNoiseFilter)" fill="#0D0826"/></svg>
-        <div class="speaker-image"></div>
-        <h3 class="speaker-name">Primeagen</h3>
-        <p class="speaker-bio"></p>
-      </div>
-      <div class="speaker-card">
-        <svg class="noise-overlay" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"><rect width="100%" height="100%" filter="url(#pinkNoiseFilter)" fill="#0D0826"/></svg>
-        <div class="speaker-image"></div>
-        <h3 class="speaker-name"></h3>
-        <p class="speaker-bio"></p>
-      </div>
-      <div class="speaker-card">
-        <svg class="noise-overlay" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"><rect width="100%" height="100%" filter="url(#pinkNoiseFilter)" fill="#0D0826"/></svg>
-        <div class="speaker-image"></div>
-        <h3 class="speaker-name"></h3>
-        <p class="speaker-bio"></p>
+        </section>
       </div>
     </div>
-  </section>
 
-  <!-- Manifesto Section -->
-  <section class="manifesto-section">
-    <div class="manifesto-text fade-in">
-      <p>This isn't a conference. It's a convening of the obsessed—the ones who rice Linux for fun, who have opinions about init systems, who believe developer experience is a human right.</p>
-    </div>
-    
-    <!-- Transition lines from beige to dark -->
-    <div class="transition-lines" id="transitionLines">
-      <svg class="lines-svg" width="100%" height="600" viewBox="0 0 1439 600" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Beige fill at top to blend with manifesto section -->
-        <rect x="0" y="0" width="1440" height="18" fill="#F8F5F2"/>
-        <!-- Lines that will collapse -->
-        <line class="collapse-line" data-original-y="18.5" y1="18.5" x2="1440" y2="18.5" stroke="#F8F5F2"/>
-        <line class="collapse-line" data-original-y="21.5" y1="21.5" x2="1440" y2="21.5" stroke="#F8F5F2"/>
-        <line class="collapse-line" data-original-y="24.5" y1="24.5" x2="1440" y2="24.5" stroke="#F8F5F2"/>
-        <line class="collapse-line" data-original-y="27.5" y1="27.5" x2="1440" y2="27.5" stroke="#F8F5F2"/>
-        <line class="collapse-line" data-original-y="30.5" y1="30.5" x2="1440" y2="30.5" stroke="#F8F5F2"/>
-        <line class="collapse-line" data-original-y="33.5" y1="33.5" x2="1440" y2="33.5" stroke="#F8F5F2"/>
-        <line class="collapse-line" data-original-y="36.5" y1="36.5" x2="1440" y2="36.5" stroke="#F8F5F2"/>
-        <line class="collapse-line" data-original-y="42.5" y1="42.5" x2="1440" y2="42.5" stroke="#F8F5F2"/>
-        <line class="collapse-line" data-original-y="48.5" y1="48.5" x2="1440" y2="48.5" stroke="#F8F5F2"/>
-        <line class="collapse-line" data-original-y="54.5" y1="54.5" x2="1440" y2="54.5" stroke="#F8F5F2"/>
-        <line class="collapse-line" data-original-y="60.5" y1="60.5" x2="1440" y2="60.5" stroke="#F8F5F2"/>
-        <line class="collapse-line" data-original-y="66.5" y1="66.5" x2="1440" y2="66.5" stroke="#F8F5F2"/>
-        <line class="collapse-line" data-original-y="78.5" y1="78.5" x2="1440" y2="78.5" stroke="#F8F5F2"/>
-        <line class="collapse-line" data-original-y="90.5" y1="90.5" x2="1440" y2="90.5" stroke="#F8F5F2"/>
-        <line class="collapse-line" data-original-y="102.5" y1="102.5" x2="1440" y2="102.5" stroke="#F8F5F2"/>
-        <line class="collapse-line" data-original-y="114.5" y1="114.5" x2="1440" y2="114.5" stroke="#F8F5F2"/>
-        <line class="collapse-line" data-original-y="138.5" y1="138.5" x2="1440" y2="138.5" stroke="#F8F5F2"/>
-        <line class="collapse-line" data-original-y="162.5" y1="162.5" x2="1440" y2="162.5" stroke="#F8F5F2"/>
-        <line class="collapse-line" data-original-y="198.5" y1="198.5" x2="1440" y2="198.5" stroke="#F8F5F2"/>
-        <line class="collapse-line" data-original-y="234.5" y1="234.5" x2="1440" y2="234.5" stroke="#F8F5F2"/>
-        <line class="collapse-line" data-original-y="282.5" y1="282.5" x2="1440" y2="282.5" stroke="#F8F5F2"/>
-        <line class="collapse-line" data-original-y="330.5" y1="330.5" x2="1440" y2="330.5" stroke="#F8F5F2"/>
-        <line class="collapse-line" data-original-y="390.5" y1="390.5" x2="1440" y2="390.5" stroke="#F8F5F2"/>
-        <line class="collapse-line" data-original-y="450.5" y1="450.5" x2="1440" y2="450.5" stroke="#F8F5F2"/>
-        <line class="collapse-line" data-original-y="520.5" y1="520.5" x2="1440" y2="520.5" stroke="#F8F5F2"/>
-        <line class="collapse-line" data-original-y="590.5" y1="590.5" x2="1440" y2="590.5" stroke="#F8F5F2"/>
-      </svg>
-    </div>
-  </section>
-
-  <!-- House Rules Section -->
-  <section class="house-rules-section fade-in">
-    <h2 class="house-rules-title">House rules</h2>
-    <div class="house-rules-grid" id="houseRulesGrid">
-      <div class="house-rule-row" data-fan-index="0">
-        <div class="house-rule-label">Be Present</div>
-        <div class="house-rule-desc">No laptops during talks (unless you're live-tweeting brilliant quotes)</div>
-      </div>
-      <div class="house-rule-row" data-fan-index="1">
-        <div class="house-rule-label">Be Bold</div>
-        <div class="house-rule-desc">Challenge ideas, not people</div>
-      </div>
-      <div class="house-rule-row" data-fan-index="2">
-        <div class="house-rule-label">Be Generous</div>
-        <div class="house-rule-desc">Share your knowledge like open source depends on it (because it does)</div>
-      </div>
-      <div class="house-rule-row" data-fan-index="3">
-        <div class="house-rule-label">Be Real</div>
-        <div class="house-rule-desc">This is a bullshit-free zone</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Fine Print Section -->
-  <section class="fine-print-section fade-in">
-    <h2 class="fine-print-title">The fine print</h2>
-    <div class="fine-print-content">
-      <div class="fine-print-item">
-        <h3>Dietary needs</h3>
-        <p>We've got you covered. Tell us what you need during registration.</p>
-      </div>
-      <div class="fine-print-item">
-        <h3>Registration</h3>
-        <p>Your info will be shared with Shopify and event partners for logistics only.</p>
-      </div>
-      <div class="fine-print-item">
-        <h3>Media</h3>
-        <p>We're recording for those who can't make it. Attending means you're cool with it.</p>
-      </div>
-      <div class="fine-print-item">
-        <h3>Code of Conduct</h3>
-        <p>Don't be the person who makes us need a longer code of conduct.</p>
+    <div class="speakers" id="speakers">
+      <a class="speakers__anchor anchor anchor--dark" href="#speakers">
+        <h3>Speakers</h3>
+      </a>
+      <div class="speakers__content content">
+        <section>
+          <figure>
+            <img src="assets/images/speaker.png" alt="Name">
+          </figure>
+          <dl>
+            <dt>Name</dt>
+            <dd>Description</dd>
+          </dl>
+        </section>
+        <section>
+          <figure>
+            <img src="assets/images/speaker.png" alt="Name">
+          </figure>
+          <dl>
+            <dt>Name</dt>
+            <dd>Description</dd>
+          </dl>
+        </section>
+        <section>
+          <figure>
+            <img src="assets/images/speaker.png" alt="Name">
+          </figure>
+          <dl>
+            <dt>Name</dt>
+            <dd>Description</dd>
+          </dl>
+        </section>
+        <section>
+          <figure>
+            <img src="assets/images/speaker.png" alt="Name">
+          </figure>
+          <dl>
+            <dt>Name</dt>
+            <dd>Description</dd>
+          </dl>
+        </section>
+        <section>
+          <figure>
+            <img src="assets/images/speaker.png" alt="Name">
+          </figure>
+          <dl>
+            <dt>Name</dt>
+            <dd>Description</dd>
+          </dl>
+        </section>
+        <section>
+          <figure>
+            <img src="assets/images/speaker.png" alt="Name">
+          </figure>
+          <dl>
+            <dt>Name</dt>
+            <dd>Description</dd>
+          </dl>
+        </section>
+        <section>
+          <figure>
+            <img src="assets/images/speaker.png" alt="Name">
+          </figure>
+          <dl>
+            <dt>Name</dt>
+            <dd>Description</dd>
+          </dl>
+        </section>
+        <section>
+          <figure>
+            <img src="assets/images/speaker.png" alt="Name">
+          </figure>
+          <dl>
+            <dt>Name</dt>
+            <dd>Description</dd>
+          </dl>
+        </section>
       </div>
     </div>
-  </section>
 
-  <!-- Register Section -->
-  <section class="register-section">
-    <h2 class="register-title">Register</h2>
-    <div class="register-content">
-      <h3 class="register-headline">Ready to see what happens when we stop accepting "good enough"?</h3>
-      <p class="register-subtext">Tickets are limited. Once they're gone, they're gone.</p>
-      <a href="#" class="register-button">Register</a>
+    <div class="statement" id="statement">
+      <div class="statement__content content">
+        <p>This isn’t a conference. It’s a convening of the obsessed—the ones who rice Linux for fun, who have opinions about init systems, who believe developer experience is a human right.</p>
+      </div>
     </div>
-  </section>
 
-  <script>
-    const container = document.getElementById('container');
-    const animCircle = document.getElementById('animCircle');
-    const animRect = document.getElementById('animRect');
-    const animDiamond = document.getElementById('animDiamond');
-    
-    // Animation states (using Figma coordinate system: 1103x553)
-    // All shapes same size: visual diameter = 640
-    const states = {
-      // Stage 1: Far apart, ALL SAME SIZE (diameter/diagonal = 640)
-      // Equal gap of ~80 between shapes
-      stage1: {
-        circle: { cx: -100, cy: 276, r: 320 },
-        rect: { x: 300, y: -44, width: 556, height: 640 },
-        diamond: { cx: 1256, cy: 276, size: 453 }
-      },
-      // Stage 2: Coming together
-      stage2: {
-        circle: { cx: 200, cy: 276, r: 250 },
-        rect: { x: 360, y: 50, width: 420, height: 480 },
-        diamond: { cx: 880, cy: 276, size: 350 }
-      },
-      // Stage 3: Final positions (scaled 0.667, moved up, centered at 551.5)
-      stage3: {
-        circle: { cx: 368, cy: 200, r: 128 },
-        rect: { x: 441, y: 72, width: 222, height: 256 },
-        diamond: { cx: 735, cy: 200, size: 181 }
-      }
-    };
-    
-    let currentState = JSON.parse(JSON.stringify(states.stage1));
-    
-    function lerp(start, end, t) {
-      return start + (end - start) * t;
-    }
-    
-    function easeInOutCubic(t) {
-      return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-    }
-    
-    function drawShapes(state) {
-      const { circle, rect, diamond } = state;
-      
-      // Calculate diamond's left point (when rotated 45 degrees)
-      const diamondLeftX = diamond.cx - diamond.size / Math.sqrt(2);
-      const diamondHalfHeight = diamond.size / Math.sqrt(2);
-      
-      // Check for overlaps
-      const circleRightEdge = circle.cx + circle.r;
-      const rectLeftEdge = rect.x;
-      const rectRightEdge = rect.x + rect.width;
-      
-      const circleOverlapsRect = circleRightEdge > rectLeftEdge;
-      const diamondOverlapsRect = diamondLeftX < rectRightEdge;
-      
-      // Update dynamic masks
-      const dynamicDefs = document.getElementById('dynamicDefs');
-      dynamicDefs.innerHTML = `
-        <!-- Mask for circle: cut out rectangle overlap -->
-        <mask id="circleMask">
-          <rect x="-500" y="-500" width="2500" height="1500" fill="white"/>
-          ${circleOverlapsRect ? `<rect x="${rect.x}" y="${rect.y}" width="${rect.width}" height="${rect.height}" fill="black"/>` : ''}
-        </mask>
-        
-        <!-- Mask for rectangle: cut out circle and diamond overlaps -->
-        <mask id="rectMask">
-          <rect x="-500" y="-500" width="2500" height="1500" fill="white"/>
-          ${circleOverlapsRect ? `<circle cx="${circle.cx}" cy="${circle.cy}" r="${circle.r}" fill="black"/>` : ''}
-          ${diamondOverlapsRect ? `<polygon points="${diamond.cx},${diamond.cy - diamondHalfHeight} ${diamond.cx + diamondHalfHeight},${diamond.cy} ${diamond.cx},${diamond.cy + diamondHalfHeight} ${diamond.cx - diamondHalfHeight},${diamond.cy}" fill="black"/>` : ''}
-        </mask>
-        
-        <!-- Mask for diamond: cut out rectangle overlap -->
-        <mask id="diamondMask">
-          <rect x="-500" y="-500" width="2500" height="1500" fill="white"/>
-          ${diamondOverlapsRect ? `<rect x="${rect.x}" y="${rect.y}" width="${rect.width}" height="${rect.height}" fill="black"/>` : ''}
-        </mask>
-      `;
-      
-      // Circle
-      animCircle.setAttribute('cx', circle.cx);
-      animCircle.setAttribute('cy', circle.cy);
-      animCircle.setAttribute('r', circle.r);
-      animCircle.setAttribute('mask', circleOverlapsRect ? 'url(#circleMask)' : '');
-      
-      // Rectangle
-      animRect.setAttribute('x', rect.x);
-      animRect.setAttribute('y', rect.y);
-      animRect.setAttribute('width', rect.width);
-      animRect.setAttribute('height', rect.height);
-      animRect.setAttribute('mask', (circleOverlapsRect || diamondOverlapsRect) ? 'url(#rectMask)' : '');
-      
-      // Diamond (polygon - no rotation transform needed)
-      const halfDiag = diamond.size / Math.sqrt(2);
-      const diamondPoints = `${diamond.cx},${diamond.cy - halfDiag} ${diamond.cx + halfDiag},${diamond.cy} ${diamond.cx},${diamond.cy + halfDiag} ${diamond.cx - halfDiag},${diamond.cy}`;
-      animDiamond.setAttribute('points', diamondPoints);
-      animDiamond.setAttribute('mask', diamondOverlapsRect ? 'url(#diamondMask)' : '');
-    }
-    
-    function animateToState(targetState, duration) {
-      const startState = JSON.parse(JSON.stringify(currentState));
-      const startTime = performance.now();
-      
-      function animate(currentTime) {
-        const elapsed = currentTime - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        const t = easeInOutCubic(progress);
-        
-        currentState = {
-          circle: {
-            cx: lerp(startState.circle.cx, targetState.circle.cx, t),
-            cy: lerp(startState.circle.cy, targetState.circle.cy, t),
-            r: lerp(startState.circle.r, targetState.circle.r, t)
-          },
-          rect: {
-            x: lerp(startState.rect.x, targetState.rect.x, t),
-            y: lerp(startState.rect.y, targetState.rect.y, t),
-            width: lerp(startState.rect.width, targetState.rect.width, t),
-            height: lerp(startState.rect.height, targetState.rect.height, t)
-          },
-          diamond: {
-            cx: lerp(startState.diamond.cx, targetState.diamond.cx, t),
-            cy: lerp(startState.diamond.cy, targetState.diamond.cy, t),
-            size: lerp(startState.diamond.size, targetState.diamond.size, t)
-          }
-        };
-        
-        drawShapes(currentState);
-        
-        if (progress < 1) {
-          requestAnimationFrame(animate);
-        }
-      }
-      
-      requestAnimationFrame(animate);
-    }
-    
-    // Prevent scrolling during animation
-    document.documentElement.classList.add('no-scroll');
-    
-    // Initial draw
-    drawShapes(currentState);
-    
-    // Animation timeline (one smooth continuous motion)
-    const animDuration = 2200; // Single animation from spread to final
-    
-    setTimeout(() => {
-      animateToState(states.stage3, animDuration);
-    }, 600);
-    
-    // Switch to final Figma path with correct cutouts
-    setTimeout(() => {
-      container.classList.add('stage-3');
-    }, 600 + animDuration + 50);
+    <div class="rules" id="rules">
+      <a class="rules__anchor anchor" href="#rules">
+        <h3>House Rules</h3>
+      </a>
+      <div class="rules__content content">
+        <dl>
+          <dt><span>Be Present</span></dt>
+          <dd>No laptops during talks (unless you’re live-tweeting brilliant quotes)</dd>
+        </dl>
+        <dl>
+          <dt><span>Be Bold</span></dt>
+          <dd>Challenge ideas, not people</dd>
+        </dl>
+        <dl>
+          <dt><span>Be Generous</span></dt>
+          <dd>Share your knowledge like open source depends on it (because it does)</dd>
+        </dl>
+        <dl>
+          <dt><span>Be Real</span></dt>
+          <dd>This is a bullshit-free zone</dd>
+        </dl>
+      </div>
+    </div>
 
-    // Enable scrolling after animation completes
-    setTimeout(() => {
-      document.documentElement.classList.remove('no-scroll');
-    }, 600 + animDuration + 800);
+    <div class="fineprint" id="fineprint">
+      <a class="fineprint__anchor anchor" href="#fineprint">
+        <h3>The Fine Print</h3>
+      </a>
+      <div class="fineprint__content content">
+        <dl>
+          <dt><u>Dietary Needs</u></dt>
+          <dd>We’ve got you covered. Tell us what you need during registration.</dd>
+        </dl>
+        <dl>
+          <dt><u>Registration</u></dt>
+          <dd>Your info will be shared with Shopify and event partners for logistics only.</dd>
+        </dl>
+        <dl>
+          <dt><u>Media</u></dt>
+          <dd>We’re recording for those who can’t make it. Attending means you’re cool with it.</dd>
+        </dl>
+        <dl>
+          <dt><u>Code of Conduct</u></dt>
+          <dd>Don’t be the person who makes us need a longer code of conduct.</dd>
+        </dl>
+      </div>
+    </div>
 
-    // Sticky CTA bar on scroll
-    const ctaBar = document.getElementById('ctaBar');
-    const heroHeight = window.innerHeight;
-    
-    window.addEventListener('scroll', () => {
-      if (window.scrollY >= heroHeight - ctaBar.offsetHeight) {
-        ctaBar.classList.add('sticky');
-      } else {
-        ctaBar.classList.remove('sticky');
-      }
-    });
+    <div class="register" id="register">
+      <a class="register__anchor anchor anchor--dark" href="#register">
+        <h3>Register</h3>
+      </a>
+      <div class="register__content content">
+        <h2>Ready to see what happens when we stop accepting “good enough”?</h2>
+        <p>Tickets are limited. Once they’re gone, they’re gone.</p>
+        <a href="/" class="button button--dark">
+          <span>Register</span>
+        </a>
+      </div>
+    </div>
 
-    // Fade in on scroll for all .fade-in elements
-    const fadeElements = document.querySelectorAll('.fade-in');
-    
-    const fadeObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    });
-    
-    fadeElements.forEach(el => fadeObserver.observe(el));
+    <footer class="footer">
+      <div class="footer__legal">
+        <p>オマーコン | Copyright 2026</p>
+      </div>
+    </footer>
 
-    // Collapsing lines animation
-    const manifestoSection = document.querySelector('.manifesto-section');
-    const transitionLines = document.getElementById('transitionLines');
-    const collapseLines = document.querySelectorAll('.collapse-line');
-    
-    function updateLines() {
-      const rect = manifestoSection.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-      
-      // Calculate progress based on how far we've scrolled through the manifesto section
-      let progress = 0;
-      
-      const startTrigger = windowHeight * 0.3;
-      const endTrigger = -rect.height * 0.5;
-      
-      if (rect.top < startTrigger) {
-        progress = (startTrigger - rect.top) / (startTrigger - endTrigger);
-        progress = Math.min(Math.max(progress, 0), 1);
-      }
-      
-      // Ease the progress for smoother animation
-      const easedProgress = progress * progress * (3 - 2 * progress); // smoothstep
-      
-      // Update lines - collapse toward top
-      const targetY = 0;
-      collapseLines.forEach((line) => {
-        const originalY = parseFloat(line.getAttribute('data-original-y'));
-        const newY = originalY * (1 - easedProgress) + targetY * easedProgress;
-        line.setAttribute('y1', newY);
-        line.setAttribute('y2', newY);
-      });
-      
-      // Collapse the dark blue background by reducing margin-bottom
-      const maxNegativeMargin = 600;
-      const negativeMargin = maxNegativeMargin * easedProgress;
-      transitionLines.style.marginBottom = -negativeMargin + 'px';
-    }
-    
-    window.addEventListener('scroll', updateLines);
-    updateLines(); // Initial call
+  </body>
 
-    // House Rules fan-out animation
-    const houseRulesSection = document.querySelector('.house-rules-section');
-    const houseRulesGrid = document.getElementById('houseRulesGrid');
-    const fanRows = document.querySelectorAll('.house-rule-row[data-fan-index]');
-    
-    function updateHouseRulesFan() {
-      const rect = houseRulesSection.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-      
-      // Calculate progress - start when section enters viewport, complete when fully visible
-      let progress = 0;
-      
-      const startTrigger = windowHeight * 0.8; // Start when section is 20% into viewport
-      const endTrigger = windowHeight * 0.2; // End when section is 80% into viewport
-      
-      if (rect.top < startTrigger) {
-        progress = (startTrigger - rect.top) / (startTrigger - endTrigger);
-        progress = Math.min(Math.max(progress, 0), 1);
-      }
-      
-      // Ease the progress
-      const easedProgress = progress * progress * (3 - 2 * progress);
-      
-      // Calculate the fan offset - starts at full row height, goes to 0
-      const rowHeight = 80; // Approximate row height
-      const maxOffset = rowHeight * (1 - easedProgress);
-      
-      // Apply the offset as a CSS variable
-      houseRulesGrid.style.setProperty('--fan-offset', maxOffset + 'px');
-    }
-    
-    window.addEventListener('scroll', updateHouseRulesFan);
-    updateHouseRulesFan(); // Initial call
-  </script>
-</body>
 </html>
