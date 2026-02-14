@@ -3,8 +3,6 @@
   border-radius: 2.5em;
   color: var(--color-light);
   display: flex;
-  font-family: var(--font-family-mono);
-  font-size: var(--font-size);
   font-weight: 600;
   justify-self: self-start;
   line-height: 1em;

@@ -31,7 +31,7 @@
   }
 
   .vibe__content section {
-    padding: var(--space-x-large) var(--space-large);
+    padding: var(--space-xx-large) var(--space-xxx-large);
   }
 
   .vibe__content section:first-child {
@@ -41,10 +41,6 @@
 
   .vibe__content section:last-child {
     grid-column: span 7;
-  }
-
-  .vibe__content section {
-    padding: var(--space-xx-large) var(--space-xxx-large);
   }
 
 }

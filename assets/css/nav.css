@@ -1,6 +1,6 @@
 .nav {
-  --nav-logo-width: 13.375em;
   --nav-details-margin: 5.125em;
+  --nav-logo-width: 13.375em;
 
   align-items: center;
   background: var(--color-pink);

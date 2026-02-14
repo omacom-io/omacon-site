@@ -15,8 +15,8 @@
 }
 
 .speakers__content section {
-  border-right: var(--border-light);
   border-bottom: var(--border-light);
+  border-right: var(--border-light);
   display: grid;
   gap: var(--space-neutral);
   padding: var(--space-x-large) var(--space-large);

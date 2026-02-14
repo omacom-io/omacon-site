@@ -14,8 +14,8 @@
 }
 
 .experience__content dl {
-  border-right: var(--border-dark);
   border-bottom: var(--border-dark);
+  border-right: var(--border-dark);
   padding: var(--space-x-large) var(--space-large);
   position: relative;
 }
