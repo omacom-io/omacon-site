@@ -1,7 +1,7 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
-  scroll-padding-top: calc(var(--font-size) * 4.2125);
+  scroll-padding-top: calc(var(--font-size) * 4.175);
 }
 
 body {
