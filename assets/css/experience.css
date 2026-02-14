@@ -21,7 +21,7 @@
 }
 
 .experience__content dl:before {
-  background: url('../images/noise-light.png') center / 80%;
+  background: url('../images/noise-light.png') center / 50%;
   content: '';
   inset: 0;
   opacity: 0;
@@ -48,10 +48,11 @@
 @media(hover: hover) {
 
   .experience__content dl:before {
-    transition: opacity var(--transition-slow);
+    transition: opacity var(--transition);
   }
 
   .experience__content dl:hover:before {
+    animation: noise 0.5s steps(3) infinite;
     opacity: 1;
   }
 

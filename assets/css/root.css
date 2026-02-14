@@ -31,6 +31,5 @@
   --space-xxx-large: 5em;
 
   --transition: 0.15s cubic-bezier(0.37, 1, 0.74, 1);
-  --transition-slow: 0.3s cubic-bezier(0.37, 1, 0.74, 1);
 
 }

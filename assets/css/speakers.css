@@ -24,7 +24,7 @@
 }
 
 .speakers__content section:before {
-  background: url('../images/noise-dark.png') center / 80%;
+  background: url('../images/noise-dark.png') center / 50%;
   content: '';
   inset: 0;
   opacity: 0;
@@ -55,10 +55,11 @@
 @media(hover: hover) {
 
   .speakers__content section:before {
-    transition: opacity var(--transition-slow);
+    transition: opacity var(--transition);
   }
 
   .speakers__content section:hover:before {
+    animation: noise 0.5s steps(3) infinite;
     opacity: 1;
   }
 
