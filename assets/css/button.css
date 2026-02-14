@@ -8,8 +8,8 @@
   font-weight: 600;
   justify-self: self-start;
   line-height: 1em;
-  outline: max(1px, 0.09em) solid var(--color-dark);
-  outline-offset: max(1px, 0.08em);
+  outline: max(1px, 0.125em) solid var(--color-dark);
+  outline-offset: max(1px, 0.0875em);
   text-decoration: none;
   text-transform: uppercase;
   user-select: none;
