@@ -1,0 +1,19 @@
+.transition {
+  --transition-height: 60vh;
+  --transition-max: max(1px, 0.08em);
+
+  background: var(--color-dark);
+  display: flex;
+  flex-direction: column;
+  height: calc(var(--transition-height) * (1 - var(--transition-progress)) + var(--transition-max) * var(--transition-progress));
+  overflow: hidden;
+}
+
+.transition span {
+  border-bottom: var(--border-light);
+  flex-grow: calc(var(--index) * var(--index) * var(--index) * var(--index) * (1 - var(--transition-progress)));
+}
+
+.transition span + span {
+  margin-top: calc(-1 * var(--transition-max) * var(--transition-progress));
+}
