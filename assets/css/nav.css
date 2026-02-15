@@ -35,6 +35,10 @@
   width: 100%;
 }
 
+.nav__logo span {
+  display: none;
+}
+
 .nav__details {
   align-items: center;
   display: flex;
