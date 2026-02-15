@@ -1,0 +1,5 @@
+.main {
+  align-content: start;
+  display: grid;
+  position: relative;
+}
