@@ -1,11 +1,11 @@
 .transition {
   --transition-height: 60vh;
-  --transition-max: max(1px, 0.08em);
+  --transition-min-height: var(--border-height);
 
   background: var(--color-dark);
   display: flex;
   flex-direction: column;
-  height: calc(var(--transition-height) * (1 - var(--transition-progress)) + var(--transition-max) * var(--transition-progress));
+  height: calc(var(--transition-height) * (1 - var(--transition-progress)) + var(--transition-min-height) * var(--transition-progress));
   overflow: hidden;
 }
 
@@ -15,5 +15,5 @@
 }
 
 .transition span + span {
-  margin-top: calc(-1 * var(--transition-max) * var(--transition-progress));
+  margin-top: calc(-1 * var(--transition-min-height) * var(--transition-progress));
 }
