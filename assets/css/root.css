@@ -20,6 +20,8 @@
   --line-height: 1.5;
   --line-height-tight: 1.2;
 
+  --nav-height: calc(var(--font-size) * 4.3);
+
   --border-dark: max(1px, 0.08em) solid var(--color-dark);
   --border-light: max(1px, 0.08em) solid var(--color-light);
 
