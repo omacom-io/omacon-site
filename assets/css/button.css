@@ -46,18 +46,18 @@
     ;
   }
 
+  .button:focus,
+  .button:hover {
+    background: var(--color-light);
+    color: var(--color-dark);
+    outline-color: var(--color-light);
+  }
+
   .button--dark:focus,
   .button--dark:hover {
     background: var(--color-pink);
     color: var(--color-dark);
     outline-color: var(--color-pink);
-  }
-
-  .button--nav:focus,
-  .button--nav:hover {
-    background: var(--color-light);
-    color: var(--color-dark);
-    outline-color: var(--color-light);
   }
 
 }
