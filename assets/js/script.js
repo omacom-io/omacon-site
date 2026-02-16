@@ -23,4 +23,10 @@ addEventListener('load', () => {
 
   document.documentElement.style.scrollBehavior = 'smooth';
 
+  setTimeout(() => {
+
+    document.body.classList.remove('preload');
+
+  }, 100);
+
 });

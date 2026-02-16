@@ -23,6 +23,12 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+body.preload *,
+body.preload *:before,
+body.preload *:after {
+  transition: none !important;
+}
+
 a {
   color: var(--color-pink);
   font-weight: 700;
