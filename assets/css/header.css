@@ -1,6 +1,48 @@
 .header {
   background: var(--color-dark);
+  color: var(--color-light);
   display: grid;
   height: calc(100vh - var(--nav-height));
-  min-height: 40vw;
+  position: relative;
+}
+
+.header__animation {
+  inset: 0;
+  position: absolute;
+}
+
+.header__content {
+  display: flex;
+  gap: var(--space-large);
+  padding: var(--space-x-large) var(--space-large);
+  position: relative;
+}
+
+.header__content ul {
+  align-content: end;
+  margin-block: -0.3875em;
+}
+
+.header__content ul:last-child {
+  margin-left: auto;
+}
+
+
+
+@media(min-width: 48em) {
+
+  .header__content {
+    display: none;
+  }
+
+}
+
+
+
+@media(min-width: 64em) {
+
+  .header {
+    min-height: 40vw;
+  }
+
 }
