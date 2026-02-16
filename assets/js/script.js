@@ -18,3 +18,9 @@ addEventListener('scroll', () => {
   passive: true
 
 });
+
+addEventListener('load', () => {
+
+  document.documentElement.style.scrollBehavior = 'smooth';
+
+});
