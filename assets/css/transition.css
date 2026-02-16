@@ -1,5 +1,5 @@
 .transition {
-  --transition-height: 60vh;
+  --transition-height: 75vh;
   --transition-min-height: var(--border-height);
 
   background: var(--color-dark);
