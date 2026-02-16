@@ -30,6 +30,8 @@ function ready() {
 
       });
 
+      history.pushState(null, '', anchor.getAttribute('href'));
+
     });
 
   });
