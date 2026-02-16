@@ -26,7 +26,7 @@ function ready() {
       scrollTo({
 
         behavior: 'smooth',
-        top: Math.max(0, scrollY + target.getBoundingClientRect().top - parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) - (transition.offsetHeight - 1))
+        top: scrollTop(target)
 
       });
 
@@ -34,7 +34,30 @@ function ready() {
 
   });
 
+  if(location.hash) requestAnimationFrame(() => {
+
+    const hash = document.querySelector(location.hash);
+
+    if(!hash) return;
+
+    scrollTo({
+
+      behavior: 'instant',
+      top: scrollTop(hash)
+
+    });
+
+  });
+
   scroll();
+
+}
+
+function scrollTop(e) {
+
+  const belowTransition = e.getBoundingClientRect().top > transition.getBoundingClientRect().top;
+
+  return Math.max(0, scrollY + e.getBoundingClientRect().top - parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) - (belowTransition ? transition.offsetHeight - 1 : 0));
 
 }
 
