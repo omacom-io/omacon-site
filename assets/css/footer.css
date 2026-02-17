@@ -1,21 +1,11 @@
 .footer {
-  background: url('../images/footer.jpg') center / cover no-repeat;
-  height: 44vw;
+  background: var(--color-pink);
+  display: grid;
+  padding: var(--space-medium) var(--space-large);
   position: relative;
 }
 
-.footer__legal {
-  align-items: center;
-  background: var(--color-pink);
-  bottom: 0;
-  display: grid;
-  justify-content: start;
-  padding: var(--space-medium) var(--space-large);
-  position: absolute;
-  width: 100%;
-}
-
-.footer__legal p {
+.footer p {
   font-size: 90%;
   font-weight: 800;
   margin-bottom: -0.425em;
@@ -27,7 +17,7 @@
 
 @media(min-width: 64em) {
 
-  .footer__legal {
+  .footer {
     padding-inline: var(--space-xxx-large);
   }
 
