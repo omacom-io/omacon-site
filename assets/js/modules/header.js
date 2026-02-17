@@ -90,7 +90,7 @@ function ready() {
 
       } else {
 
-        document.querySelector('.header__animation').classList.add('header__animation--done');
+        document.querySelector('.header').classList.add('header--done');
 
       }
 

@@ -72,7 +72,7 @@
 
 
 
-.header__animation--done .header__logo {
+.header--done .header__logo {
   opacity: 1;
   transform: none;
 }
