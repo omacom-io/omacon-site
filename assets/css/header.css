@@ -3,7 +3,6 @@
   color: var(--color-light);
   display: grid;
   height: calc(100vh - var(--nav-height));
-  min-height: 47vw;
   position: relative;
 }
 
