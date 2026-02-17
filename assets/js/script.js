@@ -1,7 +1,10 @@
+import * as header from './modules/header.js';
 import * as nav from './modules/nav.js';
 import * as transition from './modules/transition.js';
 
 document.addEventListener('DOMContentLoaded', () => {
+
+  header.ready();
 
   nav.ready();
 
