@@ -47,11 +47,14 @@
 @media(min-width: 48em) {
 
   .nav__logo {
+    filter: blur(0.2em);
     left: var(--space-large);
     opacity: 0;
+    pointer-events: none;
     position: absolute;
-    transform: scale(0.4);
+    transform: scale(0.7);
     transition:
+      filter var(--transition),
       opacity var(--transition),
       transform var(--transition)
     ;
@@ -71,7 +74,9 @@
   }
 
   .nav--sticky .nav__logo {
+    filter: none;
     opacity: 1;
+    pointer-events: auto;
     transform: none;
   }
 
