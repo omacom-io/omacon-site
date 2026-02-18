@@ -20,7 +20,7 @@
   .statement__content {
     margin-inline: auto;
     padding: 12em var(--space-xxx-large);
-    width: min(100%, 52em);
+    width: min(100%, 54em);
   }
 
 }
