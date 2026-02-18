@@ -26,7 +26,7 @@
 
   .vibe__content {
     gap: unset;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(16, 1fr);
     padding-block: unset;
   }
 
@@ -36,11 +36,11 @@
 
   .vibe__content section:first-child {
     border-right: var(--border-dark);
-    grid-column: span 5;
+    grid-column: span 7;
   }
 
   .vibe__content section:last-child {
-    grid-column: span 7;
+    grid-column: span 9;
   }
 
 }
