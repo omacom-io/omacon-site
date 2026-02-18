@@ -1,6 +1,6 @@
 .button {
   background: var(--color-dark);
-  border-radius: 2.5em;
+  border-radius: 2.25em;
   color: var(--color-light);
   display: flex;
   font-weight: 600;
@@ -8,6 +8,7 @@
   line-height: 1em;
   outline: max(1px, 0.125em) solid var(--color-dark);
   outline-offset: max(1px, 0.0875em);
+  text-align: center;
   text-decoration: none;
   text-transform: uppercase;
   user-select: none;
@@ -18,6 +19,10 @@
   margin-bottom: -0.1125em;
   margin-top: -0.1em;
   padding: 0.75em 1.125em;
+}
+
+b.button span {
+  padding: 0.625em 1.375em;
 }
 
 
@@ -38,7 +43,7 @@
 
 @media(hover: hover) {
 
-  .button {
+  a.button {
     transition:
       background var(--transition),
       color var(--transition),
@@ -46,15 +51,15 @@
     ;
   }
 
-  .button:focus,
-  .button:hover {
+  a.button:focus,
+  a.button:hover {
     background: var(--color-light);
     color: var(--color-dark);
     outline-color: var(--color-light);
   }
 
-  .button--dark:focus,
-  .button--dark:hover {
+  a.button--dark:focus,
+  a.button--dark:hover {
     background: var(--color-pink);
     color: var(--color-dark);
     outline-color: var(--color-pink);
