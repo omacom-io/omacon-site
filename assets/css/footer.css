@@ -7,7 +7,7 @@
 }
 
 .footer:before {
-  background: url('../images/noise-dark.png') center / 25%;
+  background: url('../images/noise-dark.png') center / 20%;
   content: '';
   inset: 0;
   position: absolute;

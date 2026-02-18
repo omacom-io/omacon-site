@@ -2,7 +2,7 @@
   --transition-height: 75vh;
   --transition-min-height: var(--border-height);
 
-  background: url('../images/noise-dark.png') center / 25% var(--color-dark);
+  background: url('../images/noise-dark.png') center / 20% var(--color-dark);
   display: flex;
   flex-direction: column;
   height: calc(var(--transition-height) * (1 - var(--transition-progress)) + var(--transition-min-height) * var(--transition-progress));

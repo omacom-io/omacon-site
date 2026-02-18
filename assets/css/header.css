@@ -1,5 +1,5 @@
 .header {
-  background: url('../images/noise-dark.png') center / 25% var(--color-dark);
+  background: url('../images/noise-dark.png') center / 20% var(--color-dark);
   color: var(--color-light);
   display: grid;
   height: calc(100vh - var(--nav-height));
