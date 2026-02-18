@@ -20,7 +20,7 @@
   border-right: var(--border-light);
   display: grid;
   gap: var(--space-neutral);
-  padding: var(--space-x-large) var(--space-large);
+  padding: var(--space-large);
   position: relative;
 }
 
@@ -75,7 +75,7 @@
   }
 
   .speakers__content section {
-    padding: var(--space-xx-large) var(--space-xxx-large);
+    padding: var(--space-x-large);
   }
 
   .speakers__content section:nth-child(2n) {
