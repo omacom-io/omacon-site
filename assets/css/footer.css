@@ -1,11 +1,20 @@
 .footer {
-  background: var(--color-pink);
+  background: url('../images/footer.jpg') center / cover no-repeat var(--color-dark);
   display: grid;
-  padding: var(--space-medium) var(--space-large);
+  height: 40vw;
   position: relative;
 }
 
-.footer p {
+.footer__legal {
+  background: var(--color-pink);
+  bottom: 0;
+  display: grid;
+  padding: var(--space-medium) var(--space-large);
+  position: absolute;
+  width: 100%;
+}
+
+.footer__legal p {
   font-size: 90%;
   font-weight: 800;
   margin-bottom: -0.425em;
@@ -17,7 +26,7 @@
 
 @media(min-width: 64em) {
 
-  .footer {
+  .footer__legal {
     padding-inline: var(--space-xxx-large);
   }
 
