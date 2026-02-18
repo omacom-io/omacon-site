@@ -1,13 +1,11 @@
 .button {
   background: var(--color-dark);
-  border-radius: 2.25em;
+  border-radius: 0.6em;
   color: var(--color-light);
   display: flex;
   font-weight: 600;
   justify-self: self-start;
   line-height: 1em;
-  outline: max(1px, 0.125em) solid var(--color-dark);
-  outline-offset: max(1px, 0.0875em);
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
@@ -18,11 +16,18 @@
 .button span {
   margin-bottom: -0.1125em;
   margin-top: -0.1em;
-  padding: 0.75em 1.125em;
+  padding: 1em 1.1em;
+}
+
+b.button {
+  background: none;
+  color: var(--color-dark);
+  font-weight: 400;
+  text-transform: none;
 }
 
 b.button span {
-  padding: 0.625em 1.375em;
+  padding: 0;
 }
 
 
@@ -30,13 +35,10 @@ b.button span {
 .button--dark {
   background: var(--color-light);
   color: var(--color-dark);
-  outline-color: var(--color-light);
 }
 
-.button--nav {
-  background: var(--color-dark);
-  color: var(--color-pink);
-  outline-color: var(--color-dark);
+b.button--dark {
+  color: var(--color-light);
 }
 
 
@@ -46,8 +48,7 @@ b.button span {
   a.button {
     transition:
       background var(--transition),
-      color var(--transition),
-      outline var(--transition)
+      color var(--transition)
     ;
   }
 
@@ -55,14 +56,12 @@ b.button span {
   a.button:hover {
     background: var(--color-light);
     color: var(--color-dark);
-    outline-color: var(--color-light);
   }
 
   a.button--dark:focus,
   a.button--dark:hover {
     background: var(--color-pink);
     color: var(--color-dark);
-    outline-color: var(--color-pink);
   }
 
 }
