@@ -21,7 +21,7 @@
 }
 
 .experience__content dl:before {
-  background: url('../images/noise-light.png') center / 50%;
+  background: url('../images/noise-hover-light.png') center / 50%;
   content: '';
   inset: 0;
   opacity: 0;

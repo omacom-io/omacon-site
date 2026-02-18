@@ -4,7 +4,7 @@ html {
 }
 
 body {
-  background: var(--color-light);
+  background: url('../images/noise-light.png') center / 25% var(--color-light);
   color: var(--color-dark);
   display: flex;
   flex-direction: column;

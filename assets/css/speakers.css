@@ -1,5 +1,5 @@
 .speakers {
-  background: var(--color-dark);
+  background: url('../images/noise-dark.png') center / 25% var(--color-dark);
   color: var(--color-light);
   display: grid;
   position: relative;
@@ -25,7 +25,7 @@
 }
 
 .speakers__content section:before {
-  background: url('../images/noise-dark.png') center / 50%;
+  background: url('../images/noise-hover-dark.png') center / 50%;
   content: '';
   inset: 0;
   opacity: 0;

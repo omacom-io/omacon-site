@@ -2,7 +2,15 @@
   background: url('../images/footer.jpg') center / cover no-repeat var(--color-dark);
   display: grid;
   height: 40vw;
+  margin-top: -0.1em;
   position: relative;
+}
+
+.footer:before {
+  background: url('../images/noise-dark.png') center / 25%;
+  content: '';
+  inset: 0;
+  position: absolute;
 }
 
 .footer__legal {
