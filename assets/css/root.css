@@ -3,10 +3,12 @@
   --rgb-dark: 13, 8, 38;
   --rgb-light: 248, 245, 242;
   --rgb-pink: 255, 138, 255;
+  --rgb-magenta: 237, 76, 200;
 
   --color-dark: rgb(var(--rgb-dark));
   --color-light: rgb(var(--rgb-light));
   --color-pink: rgb(var(--rgb-pink));
+  --color-magenta: rgb(var(--rgb-magenta));
 
   --font-family-sans: 'Clash Grotesk', sans-serif;
   --font-family-mono: 'Jet Brains Mono', monospace;

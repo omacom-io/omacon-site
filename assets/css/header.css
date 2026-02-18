@@ -13,7 +13,6 @@
   justify-content: center;
   padding-block: var(--space-xx-large);
   position: absolute;
-  transform: translateZ(0);
   user-select: none;
   -webkit-user-select: none;
 }
@@ -21,12 +20,13 @@
 .header__svg {
   color: var(--color-pink);
   filter:
-    drop-shadow(0 0 1.5em rgba(var(--rgb-pink), 0.5))
-    drop-shadow(0 0 2.5em rgba(var(--rgb-pink), 0.3))
+    drop-shadow(0 0 1.5em rgba(var(--rgb-magenta), 0.7))
+    drop-shadow(0 0 2.5em rgba(var(--rgb-magenta), 0.4))
   ;
   height: 100%;
   position: absolute;
   width: 100%;
+  will-change: transform;
 }
 
 .header__logo {
@@ -44,8 +44,8 @@
 
 .header__logo svg {
   filter:
-    drop-shadow(0 0 1.5em rgba(var(--rgb-pink), 0.3))
-    drop-shadow(0 0 2.5em rgba(var(--rgb-pink), 0.2))
+    drop-shadow(0 0 1.5em rgba(var(--rgb-magenta), 0.7))
+    drop-shadow(0 0 2.5em rgba(var(--rgb-magenta), 0.4))
   ;
   height: auto;
   max-width: 100%;
