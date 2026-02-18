@@ -10,6 +10,10 @@
   padding: var(--space-x-large) var(--space-large);
 }
 
+.overview__content h2 br {
+  display: none;
+}
+
 
 
 @media(min-width: 64em) {
@@ -17,7 +21,11 @@
   .overview__content {
     gap: var(--space-x-large);
     padding: var(--space-xx-large) var(--space-xxx-large);
-    width: min(100%, 48em);
+    width: min(100%, 52em);
+  }
+
+  .overview__content h2 br {
+    display: inline;
   }
 
 }
