@@ -15,6 +15,7 @@
 }
 
 .speakers__content section {
+  align-content: start;
   border-bottom: var(--border-light);
   border-right: var(--border-light);
   display: grid;
@@ -30,6 +31,7 @@
   opacity: 0;
   pointer-events: none;
   position: absolute;
+  z-index: 1;
 }
 
 .speakers__content section:nth-child(2n) {
@@ -43,11 +45,10 @@
 .speakers__content section figure,
 .speakers__content section dl {
   position: relative;
-  z-index: 1;
 }
 
 .speakers__content section dl {
-  gap: 0.9em;
+  z-index: 2;
 }
 
 
