@@ -14,11 +14,11 @@
 
 .nav__logo {
   display: flex;
-  width: var(--nav-logo-width);
 }
 
 .nav__logo a {
   color: var(--color-dark);
+  width: var(--nav-logo-width);
 }
 
 .nav__logo svg {
