@@ -20,6 +20,7 @@
   --letter-spacing-loose: 0.025em;
 
   --line-height: 1.5;
+  --line-height-loose: 2.2;
   --line-height-tight: 1.2;
 
   --nav-height: calc(var(--font-size) * 4.3);
