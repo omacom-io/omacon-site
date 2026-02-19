@@ -1,7 +1,7 @@
 .footer {
   background: url('../images/footer.jpg') center / cover no-repeat var(--color-dark);
   display: grid;
-  height: 40vw;
+  height: 50vw;
   margin-top: -0.1em;
   position: relative;
 }
