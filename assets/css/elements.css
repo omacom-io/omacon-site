@@ -41,13 +41,6 @@ strong {
   font-weight: 700;
 }
 
-u {
-  text-decoration: underline;
-  text-decoration-color: var(--color-pink);
-  text-decoration-thickness: 0.09em;
-  text-underline-offset: 0.0825em;
-}
-
 img,
 source,
 video {

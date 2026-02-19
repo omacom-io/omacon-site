@@ -26,6 +26,14 @@
   font-weight: 700;
 }
 
+.content dl dt u {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cline x1='1' y1='2' x2='4' y2='2' stroke='%23FF8AFF' stroke-width='2' stroke-linecap='round' stroke-dasharray='0 4'/%3E%3C/svg%3E") 0 100% / 0.4em 0.4em repeat no-repeat;
+  display: inline-block;
+  padding-bottom: 0.4em;
+  position: relative;
+  text-decoration: none;
+}
+
 .content ul {
   align-content: start;
   display: grid;
