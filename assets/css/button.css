@@ -22,8 +22,6 @@
 b.button {
   background: none;
   color: var(--color-dark);
-  font-weight: 400;
-  text-transform: none;
 }
 
 b.button span {
