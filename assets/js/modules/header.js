@@ -7,13 +7,13 @@ function ready() {
 
   const start = {
     circle: { cx: -100, cy: 226.5, r: 320 },
-    rect: { x: 300, y: -93.5, w: 556, h: 640 },
+    rect: { x: 338.9, y: -67.7, w: 542.3, h: 588.3 },
     diamond: { cx: 1256, cy: 226.5, s: 453 }
   };
 
   const end = {
     circle: { cx: 362, cy: 226.5, r: 132 },
-    rect: { x: 437, y: 94.5, w: 229, h: 264 },
+    rect: { x: 448.6, y: 105.2, w: 223.7, h: 242.7 },
     diamond: { cx: 741, cy: 226.5, s: 186.7 }
   };
 
