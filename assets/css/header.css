@@ -3,7 +3,7 @@
   color: var(--color-light);
   display: grid;
   height: calc(100vh - var(--nav-height));
-  min-height: 44vw;
+  min-height: 38em;
   position: relative;
 }
 
@@ -12,7 +12,7 @@
   display: grid;
   inset: 0;
   justify-content: center;
-  padding-block: var(--space-xx-large);
+  padding-block: 8em;
   position: absolute;
   user-select: none;
   -webkit-user-select: none;
@@ -32,7 +32,6 @@
 
 .header__logo {
   color: var(--color-light);
-  display: none;
   filter: blur(0.1em);
   opacity: 0;
   transform: scale(0.8) translateY(0.625em) translateZ(0);
@@ -41,7 +40,7 @@
     opacity var(--transition-slow),
     transform var(--transition-slow)
   ;
-  width: 23em;
+  width: 18em;
 }
 
 .header__logo svg {
@@ -83,12 +82,21 @@
 
 @media(min-width: 48em) {
 
+  .header {
+    min-height: 44vw;
+  }
+
+  .header__animation {
+    padding-block: 4.25em;
+  }
+
   .header__content {
     display: none;
   }
 
   .header__logo {
     display: block;
+    width: 23em;
   }
 
 }
