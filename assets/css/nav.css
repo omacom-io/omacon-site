@@ -38,6 +38,12 @@
   display: none;
 }
 
+.nav__details p a {
+  color: inherit;
+  font-weight: inherit;
+  text-decoration: none;
+}
+
 .nav__details .button {
   margin-left: auto;
 }
