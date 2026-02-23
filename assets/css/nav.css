@@ -16,16 +16,12 @@
   display: flex;
 }
 
-.nav__logo a {
-  color: var(--color-dark);
-  width: var(--nav-logo-width);
-}
-
 .nav__logo svg {
+  color: var(--color-dark);
   height: auto;
   max-width: 100%;
   overflow: visible;
-  width: 100%;
+  width: var(--nav-logo-width);
 }
 
 .nav__details {
