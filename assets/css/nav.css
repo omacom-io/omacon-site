@@ -3,6 +3,7 @@
 
   align-items: center;
   background: var(--color-pink);
+  box-shadow: var(--box-shadow-dark);
   display: grid;
   grid-auto-flow: column;
   height: var(--nav-height);

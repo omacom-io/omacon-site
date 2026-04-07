@@ -1,11 +1,10 @@
 .fineprint {
-  border-bottom: var(--border-dark);
   display: grid;
   position: relative;
 }
 
 .fineprint__anchor {
-  border-bottom: var(--border-dark);
+  border-top: none;
 }
 
 .fineprint__content {

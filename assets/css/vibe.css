@@ -1,11 +1,6 @@
 .vibe {
-  border-bottom: var(--border-dark);
   display: grid;
   position: relative;
-}
-
-.vibe__anchor {
-  border-bottom: var(--border-dark);
 }
 
 .vibe__content {

@@ -2,16 +2,26 @@
   --transition-height: 75vh;
   --transition-min-height: var(--border-height);
 
-  background: url('../images/noise-dark.png') center / 20% var(--color-dark);
+  background: url('../images/noise-dark.png') left top / 20% var(--color-dark);
   display: flex;
   flex-direction: column;
   height: calc(var(--transition-height) * (1 - var(--transition-progress)) + var(--transition-min-height) * var(--transition-progress));
   overflow: hidden;
+  position: relative;
+}
+
+.transition:after {
+  background: url('../images/noise-light.png') left top / 20% var(--color-light);
+  content: '';
+  height: calc((var(--border-height) * 37) * (1 - var(--transition-progress)) * var(--transition-progress));
+  position: absolute;
+  width: 100%;
 }
 
 .transition span {
-  border-bottom: var(--border-light);
+  border-top: var(--border-light);
   flex-grow: calc(var(--index) * var(--index) * var(--index) * var(--index) * (1 - var(--transition-progress)));
+  margin-top: calc(-1 * var(--border-height));
 }
 
 .transition span + span {

@@ -1,3 +1,4 @@
+import * as anchor from './modules/anchor.js';
 import * as header from './modules/header.js';
 import * as nav from './modules/nav.js';
 import * as transition from './modules/transition.js';
@@ -14,11 +15,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 addEventListener('scroll', () => {
 
+  anchor.scroll();
+
   transition.scroll();
 
 }, {
 
   passive: true
+
+});
+
+addEventListener('resize', () => {
+
+  anchor.scroll();
 
 });
 
@@ -31,5 +40,7 @@ addEventListener('load', () => {
     document.body.classList.remove('preload');
 
   }, 100);
+
+  anchor.scroll();
 
 });

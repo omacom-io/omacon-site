@@ -27,9 +27,12 @@
 
   --nav-height: calc(var(--font-size) * 4.3);
 
-  --border-height: max(1px, 0.08em);
+  --border-height: max(1px, 0.0625em);
   --border-dark: var(--border-height) solid var(--color-dark);
   --border-light: var(--border-height) solid var(--color-light);
+
+  --box-shadow-dark: 0 var(--border-height) 0 var(--color-dark);
+  --box-shadow-light: 0 var(--border-height) 0 var(--color-light);
 
   --space-neutral: 1.5em;
   --space-medium: 1em;

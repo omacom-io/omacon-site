@@ -1,9 +1,20 @@
 .anchor {
+  background: url('../images/noise-light.png') left top / 20% var(--color-light);
+  border-top: var(--border-dark);
+  box-shadow: var(--box-shadow-dark);
   color: inherit;
   display: grid;
   font-weight: inherit;
   padding: var(--space-neutral) var(--space-large);
+  position: sticky;
   text-decoration: none;
+  top: var(--nav-height);
+  transition:
+    background var(--transition),
+    box-shadow var(--transition),
+    color var(--transition)
+  ;
+  z-index: 99;
 }
 
 .anchor h3 {
@@ -17,14 +28,20 @@
 
 
 
-@media(hover: hover) {
+.anchor--dark {
+  background: url('../images/noise-dark.png') left top / 20% var(--color-dark);
+  box-shadow: var(--box-shadow-light);
+}
 
-  .anchor {
-    transition:
-      background var(--transition),
-      color var(--transition)
-    ;
-  }
+.anchor--stuck {
+  background: var(--color-pink);
+  box-shadow: var(--box-shadow-dark);
+  color: var(--color-dark);
+}
+
+
+
+@media(hover: hover) {
 
   .anchor:focus,
   .anchor:hover {

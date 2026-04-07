@@ -1,13 +1,13 @@
 .footer {
   background: url('../images/footer.jpg') center / cover no-repeat var(--color-dark);
   display: grid;
-  height: 50vw;
+  height: 55vw;
   margin-top: -0.1em;
   position: relative;
 }
 
 .footer:before {
-  background: url('../images/noise-dark.png') center / 20%;
+  background: url('../images/noise-dark.png') left top / 20%;
   content: '';
   inset: 0;
   position: absolute;

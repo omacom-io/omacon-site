@@ -1,11 +1,6 @@
 .experience {
-  border-bottom: var(--border-dark);
   display: grid;
   position: relative;
-}
-
-.experience__anchor {
-  border-bottom: var(--border-dark);
 }
 
 .experience__content {
@@ -21,7 +16,7 @@
 }
 
 .experience__content dl:before {
-  background: url('../images/noise-hover-light.png') center / 50%;
+  background: url('../images/noise-hover-light.png') left top / 50%;
   content: '';
   inset: 0;
   opacity: 0;

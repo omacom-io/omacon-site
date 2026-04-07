@@ -1,12 +1,8 @@
 .speakers {
-  background: url('../images/noise-dark.png') center / 20% var(--color-dark);
+  background: url('../images/noise-dark.png') left top / 20% var(--color-dark);
   color: var(--color-light);
   display: grid;
   position: relative;
-}
-
-.speakers__anchor {
-  border-bottom: var(--border-light);
 }
 
 .speakers__content {
@@ -25,7 +21,7 @@
 }
 
 .speakers__content section:before {
-  background: url('../images/noise-hover-dark.png') center / 50%;
+  background: url('../images/noise-hover-dark.png') left top / 50%;
   content: '';
   inset: 0;
   opacity: 0;
